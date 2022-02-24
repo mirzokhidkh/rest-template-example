@@ -21,9 +21,6 @@ public class ClientController {
 
     @PostMapping(value = "/receive",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> receiver(@RequestBody ReceiverRequest receiverRequest) {
-//        ApiResponse response = clientService.receiver(receiverRequest);
-//        return ResponseEntity.status(response.isStatus() ? 200 : 409).body(response);
-
         return clientService.receiver(receiverRequest);
 
     }

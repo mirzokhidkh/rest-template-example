@@ -50,4 +50,18 @@ public class Util {
         return responseStrBuilder;
     }
 
+    public static String stackTrace(Throwable ex) {
+        StackTraceElement[] ste = ex.getStackTrace();
+        StringBuilder sb = new StringBuilder();
+        sb.append(ex.getMessage());
+        for (int i = 0; i < ste.length; i++) {
+            sb.append(ste[i].toString());
+            sb.append("\n");
+            if (i == 10) {
+                break;
+            }
+        }
+        return sb.toString();
+    }
+
 }
