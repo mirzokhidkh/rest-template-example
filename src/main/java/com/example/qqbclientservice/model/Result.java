@@ -1,7 +1,7 @@
 package com.example.qqbclientservice.model;
 
 
-public class Result extends uz.fidobiznes.qqbmibapi.model.ResultAsync {
+public class Result extends ResultAsync {
 
     private Object responseBody;
 

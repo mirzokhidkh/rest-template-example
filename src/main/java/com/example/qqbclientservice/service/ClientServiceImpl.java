@@ -6,6 +6,7 @@ import com.example.qqbclientservice.util.Util;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
@@ -19,6 +20,8 @@ import java.util.Arrays;
 
 @Service
 public class ClientServiceImpl implements ClientService {
+    @Autowired
+    RestTemplate restTemplate;
 
     @Value("${generic.proxyHost}")
     private String proxyHost;
@@ -30,7 +33,6 @@ public class ClientServiceImpl implements ClientService {
     @SneakyThrows
     @Override
     public ResponseEntity<?> receiver(ReceiverRequest receiverRequest) {
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<?> response = null;
         HttpHeaders headers = new HttpHeaders();
 
@@ -38,16 +40,12 @@ public class ClientServiceImpl implements ClientService {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         String requestBodyAsString = Util.convertObjectToJsonString(receiverRequest.getRequestBody());
-        HttpEntity<String> requestEntity = new HttpEntity<String>(requestBodyAsString, headers);
-
+        HttpEntity<String> requestEntity;
         String strUrl;
         strUrl = receiverRequest.getServiceUrl() + "/" + receiverRequest.getMethodName();
 
-//        System.out.println("receiverRequest.getRequestBody() = " + receiverRequest.getRequestBody());
         Object requestBody = receiverRequest.getRequestBody();
         if (requestBody != null) {
-//            System.out.println("receiverRequest.getRequestBody() = " + requestBodyAsString);
-
             ObjectMapper objectMapper = new ObjectMapper();
             RequestBodyDTO requestBodyDTO =
                     objectMapper.convertValue(requestBody, new TypeReference<RequestBodyDTO>() {
@@ -56,47 +54,39 @@ public class ClientServiceImpl implements ClientService {
             if (requestBodyDTO.getId() != null) {
                 strUrl += "/" + requestBodyDTO.getId();
             }
-
         }
 
         SimpleClientHttpRequestFactory clientHttpReq = new SimpleClientHttpRequestFactory();
         Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
+        clientHttpReq.setProxy(proxy);
+//        restTemplate.setRequestFactory(clientHttpReq);
 
-//        URL url = new URL(strUrl);
-//        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection(proxy);
-//        urlConnection.setRequestProperty("Content-Type", "application/json");
-//        urlConnection.setRequestProperty("Accept", "application/json");
 
         switch (receiverRequest.getHttpMethodType()) {
             case POST:
+                requestEntity = new HttpEntity<String>(requestBodyAsString, headers);
+
                 try {
                     response = restTemplate.postForEntity(strUrl, requestEntity, String.class);
+                } catch (HttpStatusCodeException e) {
+//                    return ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders())
+//                            .body(e.getResponseBodyAsString());
+                    return ResponseEntity.status(e.getRawStatusCode())
+                            .body(e.getResponseBodyAsString());
+
+                }
+                break;
+            case GET:
+                requestEntity = new HttpEntity<String>(headers);
+                try {
+                    response = restTemplate.exchange(strUrl, HttpMethod.GET, requestEntity, String.class);
                 } catch (HttpStatusCodeException e) {
                     return ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders())
                             .body(e.getResponseBodyAsString());
                 }
                 break;
-            case GET:
-                clientHttpReq.setProxy(proxy);
-                restTemplate = new RestTemplate(clientHttpReq);
-                response = restTemplate.exchange(strUrl, HttpMethod.GET, requestEntity, String.class);
-
-
-//                response = restTemplate.getForEntity(url, String.class);
-
-//                urlConnection.setRequestMethod("GET");
-//                InputStream inputStream = urlConnection.getInputStream();
-//                if (requestBody != null) {
-//                    JSONObject jsonObject = Util.getJsonFromInStream(inputStream);
-//                    response = ResponseEntity.ok(jsonObject.toString());
-//
-//                } else {
-//                    JSONArray jsonArray = Util.getJsonArraysFromInStream(inputStream);
-//                    response = ResponseEntity.ok(jsonArray.toString());
-//                }
-
-                break;
             case PUT:
+                requestEntity = new HttpEntity<String>(requestBodyAsString, headers);
                 response = restTemplate.exchange(strUrl, HttpMethod.PUT, requestEntity, String.class);
             default:
 

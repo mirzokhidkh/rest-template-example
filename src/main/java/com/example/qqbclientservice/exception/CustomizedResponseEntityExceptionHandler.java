@@ -29,13 +29,11 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     private static final Logger logger = LoggerFactory.getLogger(CustomizedResponseEntityExceptionHandler.class);
 
 
+//    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 
-
-
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler({Exception.class})
     public final ResponseEntity<ResultAsync> handleAllExceptions(Exception ex, WebRequest request) {
         logger.error("" + Util.stackTrace(ex));
-
 
         ResultAsync result = new ResultAsync();
         result.setCode(5);
