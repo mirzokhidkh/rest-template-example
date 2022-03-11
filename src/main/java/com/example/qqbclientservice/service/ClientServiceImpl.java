@@ -87,7 +87,22 @@ public class ClientServiceImpl implements ClientService {
                 break;
             case PUT:
                 requestEntity = new HttpEntity<String>(requestBodyAsString, headers);
-                response = restTemplate.exchange(strUrl, HttpMethod.PUT, requestEntity, String.class);
+                try {
+                    response = restTemplate.exchange(strUrl, HttpMethod.PUT, requestEntity, String.class);
+                } catch (HttpStatusCodeException e) {
+                    return ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders())
+                            .body(e.getResponseBodyAsString());
+                }
+                break;
+            case DELETE:
+                requestEntity = new HttpEntity<String>(headers);
+                try {
+                    response = restTemplate.exchange(strUrl, HttpMethod.DELETE, requestEntity, String.class);
+                } catch (HttpStatusCodeException e) {
+                    return ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders())
+                            .body(e.getResponseBodyAsString());
+                }
+                break;
             default:
 
         }
