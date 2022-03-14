@@ -1,6 +1,6 @@
-package com.example.qqbclientservice.util;
+package com.example.resttemplatedemo.util;
 
-import com.example.qqbclientservice.exception.CustomizedRequestException;
+import com.example.resttemplatedemo.exception.CustomizedRequestException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;

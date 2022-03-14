@@ -1,6 +1,6 @@
-package com.example.qqbclientservice.model;
+package com.example.resttemplatedemo.model;
 
-import com.example.qqbclientservice.model.enums.HttpMethodType;
+import com.example.resttemplatedemo.model.enums.HttpMethodType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

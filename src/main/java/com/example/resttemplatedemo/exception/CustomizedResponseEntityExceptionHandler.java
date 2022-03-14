@@ -1,8 +1,8 @@
-package com.example.qqbclientservice.exception;
+package com.example.resttemplatedemo.exception;
 
 
-import com.example.qqbclientservice.model.ResultAsync;
-import com.example.qqbclientservice.util.Util;
+import com.example.resttemplatedemo.model.ResultAsync;
+import com.example.resttemplatedemo.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.TypeMismatchException;

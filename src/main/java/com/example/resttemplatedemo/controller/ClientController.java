@@ -1,8 +1,7 @@
-package com.example.qqbclientservice.controller;
+package com.example.resttemplatedemo.controller;
 
-import com.example.qqbclientservice.model.ReceiverRequest;
-import com.example.qqbclientservice.model.payload.ApiResponse;
-import com.example.qqbclientservice.service.ClientService;
+import com.example.resttemplatedemo.model.ReceiverRequest;
+import com.example.resttemplatedemo.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

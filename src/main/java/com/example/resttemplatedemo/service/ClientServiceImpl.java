@@ -1,8 +1,8 @@
-package com.example.qqbclientservice.service;
+package com.example.resttemplatedemo.service;
 
-import com.example.qqbclientservice.model.ReceiverRequest;
-import com.example.qqbclientservice.model.payload.RequestBodyDTO;
-import com.example.qqbclientservice.util.Util;
+import com.example.resttemplatedemo.model.ReceiverRequest;
+import com.example.resttemplatedemo.model.payload.RequestBodyDTO;
+import com.example.resttemplatedemo.util.Util;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;

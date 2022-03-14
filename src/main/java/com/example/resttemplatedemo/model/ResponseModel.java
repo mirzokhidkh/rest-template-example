@@ -1,4 +1,4 @@
-package com.example.qqbclientservice.model;
+package com.example.resttemplatedemo.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

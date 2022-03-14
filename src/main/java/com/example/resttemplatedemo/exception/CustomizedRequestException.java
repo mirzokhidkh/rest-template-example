@@ -1,4 +1,4 @@
-package com.example.qqbclientservice.exception;
+package com.example.resttemplatedemo.exception;
 
 public class CustomizedRequestException extends RuntimeException {
     private int code;

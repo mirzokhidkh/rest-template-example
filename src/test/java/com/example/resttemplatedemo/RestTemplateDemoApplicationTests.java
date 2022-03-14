@@ -1,10 +1,10 @@
-package com.example.qqbclientservice;
+package com.example.resttemplatedemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QqbClientServiceApplicationTests {
+class RestTemplateDemoApplicationTests {
 
     @Test
     void contextLoads() {

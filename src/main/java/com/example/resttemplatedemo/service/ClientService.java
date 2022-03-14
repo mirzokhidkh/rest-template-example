@@ -1,7 +1,6 @@
-package com.example.qqbclientservice.service;
+package com.example.resttemplatedemo.service;
 
-import com.example.qqbclientservice.model.ReceiverRequest;
-import com.example.qqbclientservice.model.payload.ApiResponse;
+import com.example.resttemplatedemo.model.ReceiverRequest;
 import org.springframework.http.ResponseEntity;
 
 public interface ClientService {

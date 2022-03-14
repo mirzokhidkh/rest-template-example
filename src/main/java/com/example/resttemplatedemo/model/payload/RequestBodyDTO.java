@@ -1,4 +1,4 @@
-package com.example.qqbclientservice.model.payload;
+package com.example.resttemplatedemo.model.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.example.qqbclientservice.model.enums;
+package com.example.resttemplatedemo.model.enums;
 
 public enum HttpMethodType {
     POST("POST"), GET("GET"), PUT("PUT"), DELETE("DELETE");

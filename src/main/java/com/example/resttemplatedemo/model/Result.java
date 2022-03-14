@@ -1,4 +1,4 @@
-package com.example.qqbclientservice.model;
+package com.example.resttemplatedemo.model;
 
 
 public class Result extends ResultAsync {
