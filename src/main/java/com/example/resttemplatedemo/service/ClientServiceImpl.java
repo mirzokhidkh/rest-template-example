@@ -1,6 +1,7 @@
 package com.example.resttemplatedemo.service;
 
 import com.example.resttemplatedemo.model.ReceiverRequest;
+import com.example.resttemplatedemo.model.ResultAsync;
 import com.example.resttemplatedemo.model.payload.RequestBodyDTO;
 import com.example.resttemplatedemo.util.Util;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -16,7 +17,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.InetSocketAddress;
 import java.net.Proxy;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -59,7 +62,7 @@ public class ClientServiceImpl implements ClientService {
         SimpleClientHttpRequestFactory clientHttpReq = new SimpleClientHttpRequestFactory();
         Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
         clientHttpReq.setProxy(proxy);
-//        restTemplate.setRequestFactory(clientHttpReq);
+        restTemplate.setRequestFactory(clientHttpReq);
 
 
         switch (receiverRequest.getHttpMethodType()) {
@@ -107,5 +110,14 @@ public class ClientServiceImpl implements ClientService {
 
         }
         return response;
+    }
+
+    @Override
+    public ResponseEntity<?> login() {
+
+        List<ResultAsync> list = new ArrayList<>();
+        list.add(new ResultAsync(19, "BLA BLA"));
+
+        return ResponseEntity.ok(list);
     }
 }
