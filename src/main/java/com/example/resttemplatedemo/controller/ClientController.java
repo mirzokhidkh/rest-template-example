@@ -29,23 +29,36 @@ public class ClientController {
 
     }
 
-    @PostMapping(value = "/yoshlar/service/reestr/v1", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+    @PostMapping(value = "/testForPost", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> testForPost(@RequestBody Object obj) {
+        return ResponseEntity
+                .status(200)
+                .body(obj);
+    }
+
+    @PostMapping(value = "/token", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> login(@RequestParam MultiValueMap<String, String> paramMap) {
-        return ResponseEntity.status(200).body(paramMap);
+        return ResponseEntity
+                .status(200)
+//                .contentType(MediaType.APPLICATION_JSON)
+                .body(paramMap);
 
     }
 
 
-//    @PostMapping(value = "/test"
+    //    @PostMapping(value = "/test"
 //            , consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
 //    )
-    @PostMapping(value = "/test", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.TEXT_HTML_VALUE)
+    @PostMapping(value = "/test"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+//            , produces = MediaType.TEXT_HTML_VALUE
+    )
     public ResponseEntity<Object> test(@RequestBody Object obj) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return ResponseEntity.ok()
                 .contentType(MediaType.TEXT_HTML)
-//                .contentType(MediaType.TEXT_PLAIN)
                 .body(objectMapper.writeValueAsString(obj));
+//                .body(obj);
 
     }
 
@@ -59,17 +72,21 @@ public class ClientController {
     @PostMapping(value = "/test-form-data"
             , consumes = MediaType.MULTIPART_FORM_DATA_VALUE
             , produces = MediaType.TEXT_HTML_VALUE
+//            , produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Object> testForFormData(@RequestPart("inn") String inn,
                                                   @RequestPart("token") String token,
-                                                  @RequestPart("id_client") String id_client) {
-        if (inn.equals("0")) {
-            return ResponseEntity.status(200).body(new ResultForStatUz("1", "error"));
-        }
-
+                                                  @RequestPart("id_client") String id_client) throws JsonProcessingException {
+//        if (inn.equals("0")) {
+//            return ResponseEntity.status(200).body(new ResultForStatUz("1", "error"));
+//        }
+        String str = inn + ", " + token + ", " + id_client;
+        System.out.println(str);
+        ResultAsync resultAsync = new ResultAsync(1, str);
         return ResponseEntity.ok()
                 .contentType(MediaType.TEXT_HTML)
-                .body(new ResultAsync(1, inn + ", " + token + ", " + id_client));
+                .body(new ObjectMapper().writeValueAsString(resultAsync));
+//                .body(resultAsync);
 //        return ResponseEntity.status(200).body(new ResultAsync(1,inn.getName()+", "+token.getName()+", "+id_client.getName()));
     }
 
