@@ -9,10 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>qqb-client-service</artifactId>
+    <artifactId>rest-client-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>qqb-client-service</name>
-    <description>qqb-client-service</description>
+    <name>rest-client-service</name>
+    <description>rest-client-service</description>
+    <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -31,6 +32,11 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
         </dependency>
 
         <dependency>
@@ -79,10 +85,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
 
     <build>
-        <finalName>qqb-client-service</finalName>
+        <finalName>crud-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
