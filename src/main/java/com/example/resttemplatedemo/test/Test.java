@@ -291,4 +291,49 @@ public class Test {
                 "}\n";
     }
 
+
+    public static  String getIndividualJson(){
+        return "{\n" +
+                "    \"document_type\": 1,\n" +
+                "    \"passport_serial\": \"AD3957911\",\n" +
+                "    \"firstname\": \"JAMILA\",\n" +
+                "    \"lastname\": \"AMANBAEVA\",\n" +
+                "    \"middlename\": \"MURATBAEVNA\",\n" +
+                "    \"home_region\": null,\n" +
+                "    \"home_subregion\": null,\n" +
+                "    \"home_address\": null,\n" +
+                "    \"registration_address_region_soato\": null,\n" +
+                "    \"registration_address_sub_region_soato\": null,\n" +
+                "    \"activity_region\": 1735,\n" +
+                "    \"activity_subregion\": 1735401,\n" +
+                "    \"activity_address\": \"JIPEK JOLI KO`CHASI 1-UY 6-MAGAZIN  \",\n" +
+                "    \"activity_type_id\": 9,\n" +
+                "    \"activity_type_name_uz\": \"Oziq-ovqat va nooziq-ovqat tovarlari bilan chakana savdo qilish (qurilish materiallari, sement, shifer, yog‘och va yog‘och mahsulotlari, alkogolli va tamaki mahsulotlari, neft mahsulotlarining barcha turlari, qimmatbaho metallar va qimmatbaho toshlardan yasalgan buyumlar yoxud bunday materiallar qo‘llanilgan buyumlar, audiovizual asarlar, fonogrammalar va EHM uchun yaratilgan dasturlar, yangi import avtomobillar, farmatsevtika tovarlarini sotish bundan mustasno)\",\n" +
+                "    \"pin\": \"40407883500025\",\n" +
+                "    \"official_registration_date\": \"06.07.2021\",\n" +
+                "    \"certificate_number\": \"1423418\",\n" +
+                "    \"registry_number\": \"1423418\",\n" +
+                "    \"active_till\": \"\"\n" +
+                "}\n";
+    }
+
+
+    public static  String getLegalJson(){
+        return "{\n" +
+                "    \"name\": \"\\\"TEST UCHUN\\\" Xususiy korxona\",\n" +
+                "    \"shortname\": \"\\\"TEST UCHUN\\\" XK\",\n" +
+                "    \"le_status\": 0,\n" +
+                "    \"official_registration_date\": \"12.01.2010\",\n" +
+                "    \"certificate_number\": \"1\",\n" +
+                "    \"registry_number\": \"1\",\n" +
+                "    \"tin\": 123456789,\n" +
+                "    \"opf\": 110,\n" +
+                "    \"home_region\": null,\n" +
+                "    \"home_subregion\": null,\n" +
+                "    \"home_address\": null\n" +
+                "}";
+    }
+
+
+
 }

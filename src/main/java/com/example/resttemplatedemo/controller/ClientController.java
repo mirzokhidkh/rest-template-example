@@ -57,6 +57,7 @@ public class ClientController {
                 .body(myObject);
 
     }
+
     @PostMapping(value = "/oauth2/token", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}
             , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> login2(@RequestParam MultiValueMap<String, String> paramMap) throws JsonProcessingException {
@@ -71,7 +72,6 @@ public class ClientController {
                 "}";
 
         Object myObject = mapper.readValue(str, Object.class);
-
 
 
         return ResponseEntity
@@ -107,31 +107,11 @@ public class ClientController {
     }
 
 
-    @PostMapping(value = "/mvd/services/address/info/pin/v1")
-    public ResponseEntity<?> getPersonAddresses(@RequestBody Object requestObj,
-                                         HttpServletRequest request) {
-
-        Map<String, String> allHeaders = getAllHeaders(request);
-//        System.out.println(allHeaders);
-        String bearerToken = request.getHeader("Authorization");
-        System.out.println(bearerToken);
-
-        String personAddressData = getPersonAddressData();
-
-        System.out.println(requestObj.toString());
-
-        return ResponseEntity
-                .status(200)
-                .body(personAddressData);
-    }
-
-
-
     @PostMapping(value = "/gcp/datedoc/v1", consumes = {MediaType.TEXT_XML_VALUE}
             , produces = MediaType.TEXT_XML_VALUE)
 //    public CEPResponse soapXmlTest(@RequestBody CEPRequest cepRequest,
     public String soapXmlTest2(@RequestBody CEPRequest cepRequest,
-                              HttpServletRequest request) {
+                               HttpServletRequest request) {
 
 
         Map<String, String> allHeaders = getAllHeaders(request);
@@ -154,11 +134,101 @@ public class ClientController {
     }
 
 
+    @PostMapping(value = "/mvd/services/address/info/pin/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getPersonAddresses(@RequestBody Object requestObj,
+                                                HttpServletRequest request) {
+
+        Map<String, String> allHeaders = getAllHeaders(request);
+//        System.out.println(allHeaders);
+        String bearerToken = request.getHeader("Authorization");
+        System.out.println(bearerToken);
+
+        String personAddressData = getPersonAddressData();
+
+        System.out.println(requestObj.toString());
+
+        return ResponseEntity
+                .status(200)
+                .body(personAddressData);
+    }
+
+
+
+    @PostMapping(value = "/dxa/service/business-reg/v1/individuals", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getIndividual(@RequestBody Object requestObj,
+                                                HttpServletRequest request) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, String> allHeaders = getAllHeaders(request);
+//        System.out.println(allHeaders);
+        String bearerToken = request.getHeader("Authorization");
+        System.out.println(bearerToken);
+
+
+        System.out.println(requestObj.toString());
+
+        String individualJson = getIndividualJson();
+        Object individualObj = objectMapper.readValue(individualJson, Object.class);
+
+
+        return ResponseEntity
+                .status(200)
+                .body(individualObj);
+    }
+
+
+    @PostMapping(value = "/dxa/service/business-reg/v1/legal", consumes = {MediaType.APPLICATION_JSON_VALUE}
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getLegal(@RequestBody Object requestObj,
+                                           HttpServletRequest request) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        Map<String, String> allHeaders = getAllHeaders(request);
+//        System.out.println(allHeaders);
+        String bearerToken = request.getHeader("Authorization");
+        System.out.println(bearerToken);
+        System.out.println(requestObj.toString());
+
+        String legalJson = getLegalJson();
+
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+
+
+        return ResponseEntity
+                .status(200)
+                .body(legalObj);
+    }
+
+    @PostMapping(value = "/test"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Object> test(@RequestBody Object obj,
+                                       HttpServletRequest request
+    ) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+//        Map<String, String> headers = getAllHeaders(request);
+//        System.out.println(headers);
+
+        String legalJson = getLegalJson();
+
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+
+        return ResponseEntity
+                .status(200)
+                .body(legalObj);
+//                .body(obj);
+//                .body(null);
+
+    }
+
     @PostMapping(value = "/test-crif-xml",
             consumes = {MediaType.TEXT_XML_VALUE}
             , produces = MediaType.TEXT_XML_VALUE)
     public String soapXmlCrif(@RequestBody MGRequest mgRequest,
-                                  HttpServletRequest request) throws DatatypeConfigurationException {
+                              HttpServletRequest request) throws DatatypeConfigurationException {
 
 //        System.out.println("ID = " + mgRequest.getMessage().getId());
 
@@ -202,23 +272,6 @@ public class ClientController {
     //    @PostMapping(value = "/test"
 //            , consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
 //    )
-    @PostMapping(value = "/test"
-            , consumes = MediaType.APPLICATION_JSON_VALUE
-            , produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<Object> test(@RequestBody Object obj,
-                                       HttpServletRequest request
-    ) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-//        Map<String, String> headers = getAllHeaders(request);
-//        System.out.println(headers);
-        return ResponseEntity
-                .status(200)
-//                .contentType(MediaType.APPLICATION_JSON)
-                .body(objectMapper.writeValueAsString(obj));
-//                .body(null);
-
-    }
 
     @PostMapping(value = "/test-for-empty")
     public ResponseEntity<Object> testForEmpty(@RequestBody Object obj,
