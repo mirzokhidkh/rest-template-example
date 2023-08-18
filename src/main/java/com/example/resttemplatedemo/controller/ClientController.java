@@ -221,7 +221,28 @@ public class ClientController {
                 .body(legalObj);
 //                .body(obj);
 //                .body(null);
+    }
 
+    @PostMapping(value = "/test-4xx"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Object> testForBad4xx(@RequestBody Object obj,
+                                       HttpServletRequest request
+    ) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+//        Map<String, String> headers = getAllHeaders(request);
+//        System.out.println(headers);
+
+        String legalJson = getLegalJson();
+
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+
+        return ResponseEntity
+                .status(400)
+                .body(legalObj);
+//                .body(obj);
+//                .body(null);
     }
 
     @PostMapping(value = "/test-crif-xml",
@@ -298,6 +319,18 @@ public class ClientController {
     public ResponseEntity<?> testForGET(@RequestParam Integer id) {
         ExampleDTO exampleDTO = new ExampleDTO(id);
         return ResponseEntity.status(200).body(exampleDTO);
+
+    }
+    @GetMapping(value = "/test-for-get-v2",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> testForGET() throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String legalJson = getLegalJson();
+
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+
+        return ResponseEntity.status(200).body(legalObj);
 
     }
 
