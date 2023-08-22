@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConversionException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -38,7 +39,10 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         ResultAsync result = new ResultAsync();
         result.setCode(5);
         result.setMsg("" + ex.getMessage() + " Request:" + request.getDescription(false));
-        return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+//        return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+        return ResponseEntity.internalServerError()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(result);
     }
 
     @Override

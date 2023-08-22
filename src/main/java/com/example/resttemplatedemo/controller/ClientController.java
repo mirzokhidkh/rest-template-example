@@ -15,14 +15,22 @@ import com.example.resttemplatedemo.service.ClientService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.datatype.DatatypeConfigurationException;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -137,7 +145,7 @@ public class ClientController {
     @PostMapping(value = "/mvd/services/address/info/pin/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
             , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getPersonAddresses(@RequestBody Object requestObj,
-                                                HttpServletRequest request) {
+                                                     HttpServletRequest request) {
 
         Map<String, String> allHeaders = getAllHeaders(request);
 //        System.out.println(allHeaders);
@@ -152,7 +160,6 @@ public class ClientController {
                 .status(200)
                 .body(personAddressData);
     }
-
 
 
     @PostMapping(value = "/dxa/service/business-reg/v1/individuals", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -228,7 +235,7 @@ public class ClientController {
             , produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Object> testForBad4xx(@RequestBody Object obj,
-                                       HttpServletRequest request
+                                                HttpServletRequest request
     ) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
 //        Map<String, String> headers = getAllHeaders(request);
@@ -321,6 +328,7 @@ public class ClientController {
         return ResponseEntity.status(200).body(exampleDTO);
 
     }
+
     @GetMapping(value = "/test-for-get-v2",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -355,9 +363,30 @@ public class ClientController {
 //        return ResponseEntity.status(200).body(new ResultAsync(1,inn.getName()+", "+token.getName()+", "+id_client.getName()));
     }
 
-//    @PostMapping(value = "/test-form-data",consumes = { MediaType.MULTIPART_FORM_DATA_VALUE },produces = MediaType.APPLICATION_JSON_VALUE)
-//        public ResponseEntity<?> testForFormData(@RequestParam MultiValueMap<String,String> paramMap) {
-//        return ResponseEntity.status(200).body(paramMap);
-//        }
+
+    @GetMapping("/v1/download-order")
+//    public ResponseEntity<?> downloadFile(@RequestParam String id){
+    public void downloadFile(@RequestParam String id,
+                             HttpServletResponse response) throws IOException {
+
+
+        Resource resource = new FileSystemResource("D:\\C DISK\\desktop\\mini desktop\\fb\\CLIENT services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
+
+
+        String contentType = "application/octet-stream";
+        String headerValue = "attachment; filename=\"" + resource.getFilename() + "\"";
+
+//        return ResponseEntity.ok()
+//                .contentType(MediaType.parseMediaType(contentType))
+//                .header(HttpHeaders.CONTENT_DISPOSITION, headerValue)
+//                .body(resource);
+
+        response.setContentType(contentType);
+        response.setHeader(HttpHeaders.CONTENT_DISPOSITION, headerValue);
+        response.setContentLengthLong(resource.contentLength());
+
+        StreamUtils.copy(resource.getInputStream(), response.getOutputStream());
+
+    }
 
 }
