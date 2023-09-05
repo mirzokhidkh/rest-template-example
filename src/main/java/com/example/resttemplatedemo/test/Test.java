@@ -224,6 +224,13 @@ public class Test {
                 "    \"AnswereComment\": \"\"\n" +
                 "}";
     }
+ public static  String getPersonAddressData2(){
+        return "{\n" +
+                "    \"AnswereId\": 5,\n" +
+                "    \"AnswereMessage\": \"ЖШШР: 30410785050012 топилмади\",\n" +
+                "    \"AnswereComment\": \"Берилган ЖШШР: 30410785050012 бўйича маълумотлар топилмади\"\n" +
+                "}";
+    }
 
     public static String getPersonAddressData(){
         return "{\n" +
@@ -333,6 +340,63 @@ public class Test {
                 "    \"home_address\": null\n" +
                 "}";
     }
+
+
+    public static  String getPassportDataJson(){
+        return "{\n" +
+                "    \"result\": \"1\",\n" +
+                "    \"data\": [\n" +
+                "        {\n" +
+                "            \"transaction_id\": 115230,\n" +
+                "            \"current_pinpp\": \"32605900261679\",\n" +
+                "            \"pinpps\": [\n" +
+                "                \"32605900261679\"\n" +
+                "            ],\n" +
+                "            \"current_document\": \"AA9004440\",\n" +
+                "            \"documents\": [\n" +
+                "                {\n" +
+                "                    \"document\": \"FA7483369\",\n" +
+                "                    \"type\": \"IDMS_RECV_IP_DOCUMENTS\",\n" +
+                "                    \"docgiveplace\": \"ЧИЛАНЗАРСКИЙ РУВД ГОРОДА ТАШКЕНТА\",\n" +
+                "                    \"docgiveplaceid\": 26294,\n" +
+                "                    \"datebegin\": \"2023-03-29\",\n" +
+                "                    \"dateend\": \"2033-03-28\",\n" +
+                "                    \"status\": 2\n" +
+                "                },\n" +
+                "                {\n" +
+                "                    \"document\": \"AA9004440\",\n" +
+                "                    \"type\": \"IDMS_RECV_CITIZ_DOCUMENTS\",\n" +
+                "                    \"docgiveplace\": \"ЧИЛАНЗАРСКИЙ РУВД ГОРОДА ТАШКЕНТА\",\n" +
+                "                    \"docgiveplaceid\": 26294,\n" +
+                "                    \"datebegin\": \"2015-03-13\",\n" +
+                "                    \"dateend\": \"2025-03-12\",\n" +
+                "                    \"status\": 2\n" +
+                "                }\n" +
+                "            ],\n" +
+                "            \"surnamelat\": \"ERMATOV\",\n" +
+                "            \"namelat\": \"BAXROM\",\n" +
+                "            \"patronymlat\": \"RAXMANOVICH\",\n" +
+                "            \"surnamecyr\": \"ЭРМАТОВ\",\n" +
+                "            \"namecyr\": \"БАХРОМ\",\n" +
+                "            \"patronymcyr\": \"РАХМАНОВИЧ\",\n" +
+                "            \"engsurname\": \"ERMATOV\",\n" +
+                "            \"engname\": \"BAKHROM\",\n" +
+                "            \"birth_date\": \"1990-05-26\",\n" +
+                "            \"birthplace\": null,\n" +
+                "            \"birthcountry\": \"УЗБЕКИСТАН\",\n" +
+                "            \"birthcountryid\": 182,\n" +
+                "            \"livestatus\": 1,\n" +
+                "            \"nationality\": \"УЗБЕК/УЗБЕЧКА\",\n" +
+                "            \"nationalityid\": 44,\n" +
+                "            \"citizenship\": \"УЗБЕКИСТАН\",\n" +
+                "            \"citizenshipid\": 182,\n" +
+                "            \"sex\": 1\n" +
+                "        }\n" +
+                "    ],\n" +
+                "    \"comments\": \"\"\n" +
+                "}\n";
+    }
+
 
 
 

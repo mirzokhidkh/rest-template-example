@@ -145,20 +145,24 @@ public class ClientController {
     @PostMapping(value = "/mvd/services/address/info/pin/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
             , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getPersonAddresses(@RequestBody Object requestObj,
-                                                     HttpServletRequest request) {
+                                                     HttpServletRequest request) throws JsonProcessingException {
 
         Map<String, String> allHeaders = getAllHeaders(request);
 //        System.out.println(allHeaders);
         String bearerToken = request.getHeader("Authorization");
         System.out.println(bearerToken);
 
-        String personAddressData = getPersonAddressData();
+        String personAddressData = getPersonAddressData2();
 
         System.out.println(requestObj.toString());
 
+        ObjectMapper objectMapper = new ObjectMapper();
+        Object pAddress = objectMapper.readValue(personAddressData, Object.class);
+
+
         return ResponseEntity
                 .status(200)
-                .body(personAddressData);
+                .body(pAddress);
     }
 
 
@@ -208,6 +212,29 @@ public class ClientController {
                 .body(legalObj);
     }
 
+    @PostMapping(value = "/gcp/docrest/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getPassportData(@RequestBody Object requestObj,
+                                           HttpServletRequest request) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        Map<String, String> allHeaders = getAllHeaders(request);
+//        System.out.println(allHeaders);
+        String bearerToken = request.getHeader("Authorization");
+        System.out.println(bearerToken);
+        System.out.println(requestObj.toString());
+
+        String passportDataJson = getPassportDataJson();
+
+        Object legalObj = objectMapper.readValue(passportDataJson, Object.class);
+
+
+        return ResponseEntity
+                .status(200)
+                .body(legalObj);
+    }
+
     @PostMapping(value = "/test"
             , consumes = MediaType.APPLICATION_JSON_VALUE
             , produces = MediaType.APPLICATION_JSON_VALUE
@@ -222,6 +249,8 @@ public class ClientController {
         String legalJson = getLegalJson();
 
         Object legalObj = objectMapper.readValue(legalJson, Object.class);
+
+        System.out.println(obj);
 
         return ResponseEntity
                 .status(200)
