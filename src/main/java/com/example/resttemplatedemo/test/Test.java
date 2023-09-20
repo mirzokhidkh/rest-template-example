@@ -325,7 +325,7 @@ public class Test {
     }
 
 
-    public static  String getLegalJson(){
+    public static  String getLegalJson() {
         return "{\n" +
                 "    \"name\": \"\\\"TEST UCHUN\\\" Xususiy korxona\",\n" +
                 "    \"shortname\": \"\\\"TEST UCHUN\\\" XK\",\n" +
@@ -397,6 +397,19 @@ public class Test {
                 "}\n";
     }
 
+
+    public static  String getCreditReportKATM(){
+        return "{\n" +
+                "    \"data\": {\n" +
+                "        \"result\": \"05050\",\n" +
+                "        \"resultMessage\": \"The report awaits confirmation by the operator\",\n" +
+                "        \"reportBase64\": null,\n" +
+                "        \"token\": \"tpyehkaoezqjlqyotcgbqtylmtfopmgk\"\n" +
+                "    },\n" +
+                "    \"errorMessage\": null,\n" +
+                "    \"code\": 200\n" +
+                "}";
+    }
 
 
 
