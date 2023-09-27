@@ -70,7 +70,8 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 
         ResultAsync result = new ResultAsync(2, ex.getMessage());
-        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.badRequest().body(result);
     }
 
     @ExceptionHandler(CustomizedRequestException.class)
@@ -128,7 +129,11 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         logger.error("" + Util.stackTrace(ex));
 
         ResultAsync result = new ResultAsync(2, ex.getMessage());
-        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.badRequest()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(result);
+
     }
 
 

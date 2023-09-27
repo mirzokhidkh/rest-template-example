@@ -67,13 +67,6 @@ public class ClientController {
     }
 
 
-
-
-
-
-
-
-
     @PostMapping(value = "/test"
             , consumes = MediaType.APPLICATION_JSON_VALUE
             , produces = MediaType.APPLICATION_JSON_VALUE
@@ -192,7 +185,7 @@ public class ClientController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> testForGET(@RequestParam Integer id) {
-        ExampleDTO exampleDTO = new ExampleDTO(id);
+        ExampleDTO exampleDTO = new ExampleDTO(id, null);
         return ResponseEntity.status(200).body(exampleDTO);
 
     }
@@ -207,6 +200,16 @@ public class ClientController {
         Object legalObj = objectMapper.readValue(legalJson, Object.class);
 
         return ResponseEntity.status(200).body(legalObj);
+
+    }
+
+
+    @GetMapping(value = "/test-for-get-v3/{code}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> testForGETv3(@PathVariable String code) {
+        ExampleDTO exampleDTO = new ExampleDTO(0, code);
+        return ResponseEntity.status(200).body(exampleDTO);
 
     }
 
@@ -233,10 +236,16 @@ public class ClientController {
 
 
     @GetMapping("/v1/download-order")
-//    public ResponseEntity<?> downloadFile(@RequestParam String id){
-    public void downloadFile(@RequestParam String id,
-                             HttpServletResponse response) throws IOException {
+    public ResponseEntity<?> downloadFile(@RequestParam String id) {
+//    public void downloadFile(@RequestParam String id,
+//                             HttpServletResponse response) throws IOException {
 
+        if (id.equals("0")) {
+            ExampleDTO exampleDTO = new ExampleDTO(0, id);
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(exampleDTO);
+        }
 
         Resource resource = new FileSystemResource("D:\\C DISK\\desktop\\mini desktop\\fb\\CLIENT services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
 
@@ -244,16 +253,17 @@ public class ClientController {
         String contentType = "application/octet-stream";
         String headerValue = "attachment; filename=\"" + resource.getFilename() + "\"";
 
-//        return ResponseEntity.ok()
+        return ResponseEntity.ok()
 //                .contentType(MediaType.parseMediaType(contentType))
-//                .header(HttpHeaders.CONTENT_DISPOSITION, headerValue)
-//                .body(resource);
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .header(HttpHeaders.CONTENT_DISPOSITION, headerValue)
+                .body(resource);
 
-        response.setContentType(contentType);
-        response.setHeader(HttpHeaders.CONTENT_DISPOSITION, headerValue);
-        response.setContentLengthLong(resource.contentLength());
-
-        StreamUtils.copy(resource.getInputStream(), response.getOutputStream());
+//        response.setContentType(contentType);
+//        response.setHeader(HttpHeaders.CONTENT_DISPOSITION, headerValue);
+//        response.setContentLengthLong(resource.contentLength());
+//
+//        StreamUtils.copy(resource.getInputStream(), response.getOutputStream());
 
     }
 
@@ -263,7 +273,7 @@ public class ClientController {
             , produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Object> getKATM(@RequestBody Object obj,
-                                       HttpServletRequest request
+                                          HttpServletRequest request
     ) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
 

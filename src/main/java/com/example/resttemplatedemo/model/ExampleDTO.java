@@ -10,4 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ExampleDTO {
     private Integer id;
+
+    private String code;
 }
+
