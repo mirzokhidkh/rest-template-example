@@ -5,15 +5,24 @@ import com.example.resttemplatedemo.model.crif.schemes.MessageIdempotence;
 import com.example.resttemplatedemo.model.crif.schemes.MessageResponse;
 import com.example.resttemplatedemo.model.gcp.schemes.CEPResponse;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.NotNull;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.ZonedDateTime;
+import java.util.Collections;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Test {
 
+    public static Map<String, String> getAllHeaders(HttpServletRequest request) {
+        Map<String, String> headersMap = new HashMap<>();
+        Collections.list(request.getHeaderNames()).forEach(headerName -> headersMap.put(headerName, request.getHeader(headerName)));
+        return headersMap;
+    }
 
     public static String getMGResponseStringXml(){
         return "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
@@ -410,6 +419,17 @@ public class Test {
                 "    \"code\": 200\n" +
                 "}";
     }
+
+
+    public static  String getCreditReportKATMError(){
+        return "{\n" +
+                "  \"data\": null,\n" +
+                "  \"errorMessage\": \"pReason: Поле должно содержать только цифры 0-9, pActivity: Поле должно содержать только цифры 0-9\",\n" +
+                "  \"code\": 500\n" +
+                "}";
+    }
+
+
 
 
 

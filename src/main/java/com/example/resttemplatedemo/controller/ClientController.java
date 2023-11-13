@@ -213,6 +213,14 @@ public class ClientController {
 
     }
 
+
+    @DeleteMapping(value = "/test-for-delete/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> deleteByID(@PathVariable String code) {
+        ExampleDTO exampleDTO = new ExampleDTO(0, code + " deleted");
+        return ResponseEntity.status(200).body(exampleDTO);
+
+    }
+
     @PostMapping(value = "/test-form-data"
             , consumes = MediaType.MULTIPART_FORM_DATA_VALUE
             , produces = MediaType.TEXT_HTML_VALUE
@@ -255,7 +263,8 @@ public class ClientController {
 
         return ResponseEntity.ok()
 //                .contentType(MediaType.parseMediaType(contentType))
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .contentType(MediaType.APPLICATION_PDF)
+//                .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .header(HttpHeaders.CONTENT_DISPOSITION, headerValue)
                 .body(resource);
 
@@ -268,7 +277,8 @@ public class ClientController {
     }
 
 
-    @PostMapping(value = "/katm-api/v1/credit/report"
+//    @PostMapping(value = "/katm-api/v1/credit/report"
+    @PostMapping(value = "/credit/registration"
             , consumes = MediaType.APPLICATION_JSON_VALUE
             , produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -277,17 +287,35 @@ public class ClientController {
     ) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        String creditReportKATM = getCreditReportKATM();
+//        String creditReportKATM = getCreditReportKATM();
+        String creditReportKATM = getCreditReportKATMError();
 
         Object legalObj = objectMapper.readValue(creditReportKATM, Object.class);
 
         System.out.println(obj);
 
         return ResponseEntity
+                .status(500)
+//                .status(200)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(legalObj);
+//
+    }
+
+    @PostMapping(value = "/test1"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Object> test2(@RequestBody Object obj,
+                                       HttpServletRequest request
+    ) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String legalJson = getLegalJson();
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+        System.out.println(obj);
+        return ResponseEntity
                 .status(200)
                 .body(legalObj);
-//                .body(obj);
-//                .body(null);
     }
 
 }

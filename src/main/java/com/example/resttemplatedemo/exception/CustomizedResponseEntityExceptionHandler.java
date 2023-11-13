@@ -90,7 +90,10 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 
         ResultAsync result = new ResultAsync(2, ex.getCause().getCause().getMessage());
-        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.badRequest()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(result);
     }
 
 
@@ -107,8 +110,9 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
         ResultAsync result = new ResultAsync(2, ex.getMessage());
 
-        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
-    }
+        return ResponseEntity.badRequest()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(result);    }
 
     //this will handle situation when user sending empty request body in post request
     @Override
@@ -119,8 +123,9 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         logger.error("" + Util.stackTrace(ex));
 
         ResultAsync result = new ResultAsync(2, ex.getMessage());
-        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
-    }
+        return ResponseEntity.badRequest()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(result);    }
 
     //this will handle situation when user sending without required request parameter
     @Override

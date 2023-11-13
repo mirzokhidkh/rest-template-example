@@ -4,6 +4,8 @@ import com.example.resttemplatedemo.model.gcp.schemes.CEPRequest;
 import com.example.resttemplatedemo.model.gcp.schemes.GetDataByPinppRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.SneakyThrows;
+import org.apache.commons.io.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
@@ -13,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -169,7 +175,7 @@ public class GCPMockController {
     @PostMapping(value = "/gcp/docrest/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
             , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getPassportData(@RequestBody Object requestObj,
-                                                  HttpServletRequest request) throws JsonProcessingException {
+                                                  HttpServletRequest request) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -181,6 +187,9 @@ public class GCPMockController {
 
         String passportDataJson = getPassportDataJson();
 
+//        FileInputStream fis = new FileInputStream("src/main/resources/mockPassportDataRes.json");
+//        String passportDataJson = IOUtils.toString(fis, StandardCharsets.UTF_8);
+
         Object legalObj = objectMapper.readValue(passportDataJson, Object.class);
 
 
@@ -190,10 +199,30 @@ public class GCPMockController {
     }
 
 
-    public Map<String, String> getAllHeaders(HttpServletRequest request) {
-        Map<String, String> headersMap = new HashMap<>();
-        Collections.list(request.getHeaderNames()).forEach(headerName -> headersMap.put(headerName, request.getHeader(headerName)));
-        return headersMap;
+
+
+
+    @SneakyThrows
+    public static void main(String[] args) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        FileInputStream fis = new FileInputStream("src/main/resources/mockPassportDataRes.json");
+        String passportDataJson = IOUtils.toString(fis, StandardCharsets.UTF_8);
+
+        String example = "asassa\r\nasasa\r\n";
+        System.out.println(example);
+//        passportDataJson = passportDataJson.replace("\r\n", "");
+//
+//        System.out.println(passportDataJson);
+
+        String input = "asassa\\r\\nasasa\\r\\n";
+        String output = input.replace("\r\n", "");
+        System.out.println(input);
+        System.out.println(output);
+
+        Object legalObj = objectMapper.readValue(passportDataJson, Object.class);
+
+
     }
 
 
