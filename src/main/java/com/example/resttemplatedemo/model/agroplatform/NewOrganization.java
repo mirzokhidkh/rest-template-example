@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class NewOrganization {
 
 	@JsonProperty("query_id")
-	private int queryId;
+	private String queryId;
 
 	//bank MFO
 	//Мижозга хизмат курсатувчи банк коди
@@ -41,82 +41,4 @@ public class NewOrganization {
 	@JsonProperty("dial_num")
 	private int dialNum;
 
-	public void setQueryId(int queryId){
-		this.queryId = queryId;
-	}
-
-	public int getQueryId(){
-		return queryId;
-	}
-
-	public void setClientBranch(String clientBranch){
-		this.clientBranch = clientBranch;
-	}
-
-	public String getClientBranch(){
-		return clientBranch;
-	}
-
-	public void setOfferAgreementFileUrl(String offerAgreementFileUrl){
-		this.offerAgreementFileUrl = offerAgreementFileUrl;
-	}
-
-	public String getOfferAgreementFileUrl(){
-		return offerAgreementFileUrl;
-	}
-
-	public void setQueryDate(String queryDate){
-		this.queryDate = queryDate;
-	}
-
-	public String getQueryDate(){
-		return queryDate;
-	}
-
-	public void setInn(String inn){
-		this.inn = inn;
-	}
-
-	public String getInn(){
-		return inn;
-	}
-
-	public void setClient(String client){
-		this.client = client;
-	}
-
-	public String getClient(){
-		return client;
-	}
-
-	public void setDialD(String dialD){
-		this.dialD = dialD;
-	}
-
-	public String getDialD(){
-		return dialD;
-	}
-
-	public void setDialNum(int dialNum){
-		this.dialNum = dialNum;
-	}
-
-	public int getDialNum(){
-		return dialNum;
-	}
-
-	@Override
- 	public String toString(){
-		return 
-			"NewOrganization{" + 
-			"query_id = '" + queryId + '\'' + 
-			",client_branch = '" + clientBranch + '\'' + 
-			",offer_agreement_file_url = '" + offerAgreementFileUrl + '\'' + 
-			",query_date = '" + queryDate + '\'' + 
-			",inn = '" + inn + '\'' + 
-			",client = '" + client + '\'' + 
-			",dial_d = '" + dialD + '\'' + 
-			",dial_num = '" + dialNum + '\'' + 
-			"}";
-		}
 }

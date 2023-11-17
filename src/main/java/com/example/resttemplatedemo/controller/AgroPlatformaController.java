@@ -18,10 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.time.LocalDate;
+import java.util.*;
 
 import static com.example.resttemplatedemo.test.Test.*;
 import static com.example.resttemplatedemo.test.UzAgroTestJson.getGetNewOrg;
@@ -49,15 +47,20 @@ public class AgroPlatformaController {
         int code = rn.nextInt(2);
         if (code == 1) {
             NewOrganization newOrganization = new NewOrganization();
-            newOrganization.setQueryId(rn.nextInt(10000));
+//            long queryId = rn.nextLong();
+//            String queryIdStr = String.valueOf(queryId);
+            String queryIdStr = String.valueOf(UUID.randomUUID()).substring(0,14);
+            newOrganization.setQueryId(queryIdStr);
             newOrganization.setInn("12345679");
-            newOrganization.setClientBranch("bank MFO");
-            newOrganization.setClient("bank HISOB RAQAMI");
-            newOrganization.setDialD("2023-11-11");
+            newOrganization.setClientBranch("00050");
+            newOrganization.setClient("12345678");
+            newOrganization.setDialD("2023-11-19");
             newOrganization.setDialNum(1212);
             newOrganization.setOfferAgreementFileUrl("url");
-            newOrganization.setQueryDate("2023-11-11");
+            LocalDate now = LocalDate.now();
+            newOrganization.setQueryDate(now.toString());
 
+//            int i = 12345678901234;
 
             return ResponseEntity
                     .status(200)
