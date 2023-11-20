@@ -42,21 +42,39 @@ public class AgroPlatformaController {
 
 //        Object newOrganization = objectMapper.readValue(getNewOrg, Object.class);
 
+        String[] accounts = new String[]{"22618000799000004001", "22618000799000004009","16549000500000440104", "56602000200000440143",
+                "22618000799000004011","16101840900000398001","23504000300000399510","14901000799001856001","22618000719000004002",
+                "22618000799000004002","22618000799000001002"
+        };
+
         Random rn = new Random();
 
         int code = rn.nextInt(2);
         if (code == 1) {
+            //{
+            //    "query_id": 41493,
+            //    "inn": "305029060",
+            //    "client_branch": "00450",
+            //    "client": "20208000900812465001",
+            //    "dial_d": "2023-09-12",
+            //    "dial_num": 41493,
+            //    "offer_agreement_file_url": null,
+            //    "query_date": "2023-11-20"
+            //}
             NewOrganization newOrganization = new NewOrganization();
 //            long queryId = rn.nextLong();
 //            String queryIdStr = String.valueOf(queryId);
-            String queryIdStr = String.valueOf(UUID.randomUUID()).substring(0,14);
+            String queryIdStr = String.valueOf(UUID.randomUUID()).substring(0, 14);
             newOrganization.setQueryId(queryIdStr);
-            newOrganization.setInn("12345679");
-            newOrganization.setClientBranch("00050");
-            newOrganization.setClient("12345678");
-            newOrganization.setDialD("2023-11-19");
-            newOrganization.setDialNum(1212);
-            newOrganization.setOfferAgreementFileUrl("url");
+            //305029060
+            //
+            newOrganization.setInn("305029060");
+            newOrganization.setClientBranch("00440");
+            newOrganization.setClient(accounts[rn.nextInt(accounts.length)]);
+//            newOrganization.setClient("20208000900812465001");
+            newOrganization.setDialD("2023-09-12");
+            newOrganization.setDialNum(41493);
+            newOrganization.setOfferAgreementFileUrl(null);
             LocalDate now = LocalDate.now();
             newOrganization.setQueryDate(now.toString());
 
@@ -69,13 +87,13 @@ public class AgroPlatformaController {
             AgroResponse agroResponse = new AgroResponse(code, "Error-1");
 
             return ResponseEntity
-                    .status(200)
+                    .status(400)
                     .body(agroResponse);
         }
     }
 
 
-    @GetMapping(value = "/api/company/got-new-organization/",
+    @PostMapping(value = "/api/company/got-new-organization/",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> gotNewOrg(@RequestBody Object requestObj,
@@ -95,7 +113,7 @@ public class AgroPlatformaController {
     }
 
 
-    @GetMapping(value = "/api/company/transaction/",
+    @PostMapping(value = "/api/company/transaction/",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> transaction(@RequestBody Object requestObj,
