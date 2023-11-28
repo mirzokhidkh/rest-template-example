@@ -1,28 +1,25 @@
 package com.example.resttemplatedemo.controller;
 
-import com.example.resttemplatedemo.model.ExampleDTO;
 import com.example.resttemplatedemo.model.agroplatform.AgroResponse;
 import com.example.resttemplatedemo.model.agroplatform.NewOrganization;
-import com.example.resttemplatedemo.model.gcp.schemes.CEPRequest;
-import com.example.resttemplatedemo.model.gcp.schemes.GetDataByPinppRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.SneakyThrows;
-import org.apache.commons.io.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Map;
+import java.util.Random;
 
-import static com.example.resttemplatedemo.test.Test.*;
+import static com.example.resttemplatedemo.test.Test.getAllHeaders;
 import static com.example.resttemplatedemo.test.UzAgroTestJson.getGetNewOrg;
+
+
 
 @RestController
 public class AgroPlatformaController {
@@ -49,7 +46,8 @@ public class AgroPlatformaController {
 
         Random rn = new Random();
 
-        int code = rn.nextInt(2);
+//        int code = rn.nextInt(2);
+        int code = 1;
         if (code == 1) {
             //{
             //    "query_id": 41493,
@@ -64,14 +62,19 @@ public class AgroPlatformaController {
             NewOrganization newOrganization = new NewOrganization();
 //            long queryId = rn.nextLong();
 //            String queryIdStr = String.valueOf(queryId);
-            String queryIdStr = String.valueOf(UUID.randomUUID()).substring(0, 14);
-            newOrganization.setQueryId(queryIdStr);
+            int queryIdStr = 10000 + rn.nextInt(100000);
+//            newOrganization.setQueryId(queryIdStr);
+            newOrganization.setQueryId(12345);
             //305029060
             //
             newOrganization.setInn("305029060");
             newOrganization.setClientBranch("00440");
             newOrganization.setClient(accounts[rn.nextInt(accounts.length)]);
+//            newOrganization.setClient("23112000600100001503");
+//            newOrganization.setClient("22618000799000004001");
 //            newOrganization.setClient("20208000900812465001");
+//            newOrganization.setClient("23112000600100001503");
+//            newOrganization.setClient("13301000304452225223");
             newOrganization.setDialD("2023-09-12");
             newOrganization.setDialNum(41493);
             newOrganization.setOfferAgreementFileUrl(null);
@@ -87,7 +90,7 @@ public class AgroPlatformaController {
             AgroResponse agroResponse = new AgroResponse(code, "Error-1");
 
             return ResponseEntity
-                    .status(400)
+                    .status(200)
                     .body(agroResponse);
         }
     }
@@ -97,7 +100,7 @@ public class AgroPlatformaController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> gotNewOrg(@RequestBody Object requestObj,
-                                       HttpServletRequest servletRequest) throws JsonProcessingException {
+                                       HttpServletRequest servletRequest) throws JsonProcessingException, InterruptedException {
 
         Map<String, String> allHeaders = getAllHeaders(servletRequest);
 //        System.out.println(allHeaders);
@@ -105,7 +108,10 @@ public class AgroPlatformaController {
         System.out.println(bearerToken);
 
         Random rn = new Random();
-        int code = rn.nextInt(2);
+//        int code = rn.nextInt(2);
+        int code = 1;
+
+//        Thread.sleep(5000);
         AgroResponse agroResponse = new AgroResponse(code, code == 1 ? "Success-2" : "Error-2");
         return ResponseEntity
                 .status(200)
@@ -117,7 +123,7 @@ public class AgroPlatformaController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> transaction(@RequestBody Object requestObj,
-                                         HttpServletRequest servletRequest) throws JsonProcessingException {
+                                         HttpServletRequest servletRequest) throws JsonProcessingException, InterruptedException {
 
         Map<String, String> allHeaders = getAllHeaders(servletRequest);
 //        System.out.println(allHeaders);
@@ -126,12 +132,24 @@ public class AgroPlatformaController {
 
 
         Random rn = new Random();
-        int code = rn.nextInt(2);
+//        int code = rn.nextInt(2);
+        int code = 1;
+
         AgroResponse agroResponse = new AgroResponse(code, code == 1 ? "Success-3" : "Error-3");
+
+//        Thread.sleep(5000);
+
         return ResponseEntity
                 .status(200)
                 .body(agroResponse);
     }
 
+
+    public static void main(String[] args) {
+//        String hello = FbEncoder.getEncrypt("hello");
+//        System.out.println(hello);
+
+
+    }
 
 }

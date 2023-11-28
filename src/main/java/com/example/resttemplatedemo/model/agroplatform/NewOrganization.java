@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class NewOrganization {
 
 	@JsonProperty("query_id")
-	private String queryId;
+	private int queryId;
 
 	//bank MFO
 	//Мижозга хизмат курсатувчи банк коди

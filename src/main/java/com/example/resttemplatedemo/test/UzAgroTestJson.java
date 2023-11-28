@@ -14,4 +14,6 @@ public class UzAgroTestJson {
                 "    \"query_date\": \"2023-11-20\"\n" +
                 "}";
     }
+
+
 }
