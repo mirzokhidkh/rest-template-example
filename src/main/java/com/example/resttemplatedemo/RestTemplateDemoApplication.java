@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
-@EnableWebMvc
+//@EnableWebMvc
 public class RestTemplateDemoApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
