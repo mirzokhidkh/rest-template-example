@@ -46,9 +46,9 @@ public class AgroPlatformaController {
 
         Random rn = new Random();
 
-//        int code = rn.nextInt(2);
-        int code = 1;
-        if (code == 1) {
+        int code = rn.nextInt(2);
+//        int code = 1;
+        if (code == 1)  {
             //{
             //    "query_id": 41493,
             //    "inn": "305029060",
@@ -90,7 +90,7 @@ public class AgroPlatformaController {
             AgroResponse agroResponse = new AgroResponse(code, "Error-1");
 
             return ResponseEntity
-                    .status(200)
+                    .status(400)
                     .body(agroResponse);
         }
     }
