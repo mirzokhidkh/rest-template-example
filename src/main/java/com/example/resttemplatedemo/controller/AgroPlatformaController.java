@@ -23,6 +23,7 @@ import static com.example.resttemplatedemo.test.UzAgroTestJson.getGetNewOrg;
 
 @RestController
 public class AgroPlatformaController {
+
     @GetMapping(value = "/api/company/get-new-organization/",
             produces = MediaType.APPLICATION_JSON_VALUE
     )

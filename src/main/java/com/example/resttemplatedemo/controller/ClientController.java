@@ -14,6 +14,7 @@ import com.example.resttemplatedemo.model.gcp.schemes.GetDataByPinppRequest;
 import com.example.resttemplatedemo.service.ClientService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
@@ -73,7 +74,7 @@ public class ClientController {
     )
     public ResponseEntity<Object> test(@RequestBody Object obj,
                                        HttpServletRequest request
-    ) throws JsonProcessingException {
+    ) throws JsonProcessingException, InterruptedException {
         ObjectMapper objectMapper = new ObjectMapper();
 //        Map<String, String> headers = getAllHeaders(request);
 //        System.out.println(headers);
@@ -82,12 +83,19 @@ public class ClientController {
 
         Object legalObj = objectMapper.readValue(legalJson, Object.class);
 
-        System.out.println(obj);
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = ow.writeValueAsString(obj);
+        System.out.println(json);
+
+        Thread.sleep(31*1000);
+//
+        System.out.println("RESPONSE");
+
 
         return ResponseEntity
                 .status(200)
                 .body(legalObj);
-//                .body(obj);
+//                .status(503)
 //                .body(null);
     }
 
@@ -108,6 +116,29 @@ public class ClientController {
 
         return ResponseEntity
                 .status(400)
+                .body(legalObj);
+//                .body(obj);
+//                .body(null);
+    }
+
+    @PostMapping(value = "/test-5xx"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Object> testForBad5xx(@RequestBody Object obj,
+                                                HttpServletRequest request
+    ) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+//        Map<String, String> headers = getAllHeaders(request);
+//        System.out.println(headers);
+
+        String legalJson = getLegalJson();
+
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+
+        return ResponseEntity
+//                .internalServerError()
+                .status(500)
                 .body(legalObj);
 //                .body(obj);
 //                .body(null);
