@@ -87,7 +87,7 @@ public class ClientController {
         String json = ow.writeValueAsString(obj);
         System.out.println(json);
 
-        Thread.sleep(31*1000);
+//        Thread.sleep(31*1000);
 //
         System.out.println("RESPONSE");
 
@@ -220,6 +220,14 @@ public class ClientController {
         return ResponseEntity.status(200).body(exampleDTO);
 
     }
+    @GetMapping(value = "/test-for-get-str",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> testForGET(@RequestParam String id) {
+        ExampleDTO exampleDTO = new ExampleDTO(1, null);
+        return ResponseEntity.status(200).body(exampleDTO);
+
+    }
 
     @GetMapping(value = "/test-for-get-v2",
             produces = MediaType.APPLICATION_JSON_VALUE
@@ -286,7 +294,8 @@ public class ClientController {
                     .body(exampleDTO);
         }
 
-        Resource resource = new FileSystemResource("D:\\C DISK\\desktop\\mini desktop\\fb\\CLIENT services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
+//        Resource resource = new FileSystemResource("D:\\C DISK\\desktop\\mini desktop\\fb\\CLIENT services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
+        Resource resource = new FileSystemResource("D:\\my-desktop\\mini-desktop\\fb\\CLIENT-services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
 
 
         String contentType = "application/octet-stream";
