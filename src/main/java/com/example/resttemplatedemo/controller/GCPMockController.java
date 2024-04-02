@@ -29,7 +29,7 @@ import static com.example.resttemplatedemo.test.Test.*;
 public class GCPMockController {
     @PostMapping(value = "/oauth2/token", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}
             , produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> login2(@RequestParam MultiValueMap<String, String> paramMap) throws JsonProcessingException {
+    public ResponseEntity<?> getToken(@RequestParam MultiValueMap<String, String> paramMap) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
 
         String str = "{\n" +
@@ -42,6 +42,7 @@ public class GCPMockController {
 
         Object myObject = mapper.readValue(str, Object.class);
 
+        System.out.println("/oauth2/token");
 
         return ResponseEntity
                 .status(200)
@@ -54,7 +55,7 @@ public class GCPMockController {
     @PostMapping(value = "/gcp/pinser/v1", consumes = {MediaType.TEXT_XML_VALUE}
 //            , produces = MediaType.TEXT_XML_VALUE
     )
-    public ResponseEntity<?> soapXmlTest(@RequestBody GetDataByPinppRequest getDataByPinppRequest,
+    public ResponseEntity<?> getPinSer(@RequestBody GetDataByPinppRequest getDataByPinppRequest,
                                          HttpServletRequest request) {
 
 
@@ -69,6 +70,7 @@ public class GCPMockController {
 
 //        GcpResponse gcpResponse = new GcpResponse();
 //        gcpResponse.setComments("No Auth");
+        System.out.println("/gcp/pinser/v1");
 
         return ResponseEntity
                 .status(200)
@@ -78,8 +80,8 @@ public class GCPMockController {
     @PostMapping(value = "/gcp/datedoc/v1", consumes = {MediaType.TEXT_XML_VALUE}
             , produces = MediaType.TEXT_XML_VALUE)
 //    public CEPResponse soapXmlTest(@RequestBody CEPRequest cepRequest,
-    public String soapXmlTest2(@RequestBody CEPRequest cepRequest,
-                               HttpServletRequest request) {
+    public String getPersonDoc(@RequestBody CEPRequest cepRequest,
+                               HttpServletRequest request) throws JsonProcessingException {
 
 
         Map<String, String> allHeaders = getAllHeaders(request);
@@ -88,7 +90,8 @@ public class GCPMockController {
         System.out.println(bearerToken);
 
 //        CEPResponse cepResponse = getResponseXml();
-        String cepResponse = GetDataByDocResponseStringXMl();
+//        String cepResponse = GetDataByDocResponseStringXMl();
+        String cepResponse = GetDataByDocResponseStringXMl2();
 
 //        return cepResponse;
 
@@ -98,7 +101,46 @@ public class GCPMockController {
 //        soapEnvelope.setBody(body);
 //        return soapEnvelope;
 
+        System.out.println("/gcp/datedoc/v1");
         return cepResponse;
+//
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        String legalJson = getLegalJson();
+//        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+//
+//        return ResponseEntity
+//                .status(401)
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .body(null);
+    }
+
+
+    @PostMapping(value = "/gcp/docrest/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getPassportData(@RequestBody Object requestObj,
+                                                  HttpServletRequest request) throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        Map<String, String> allHeaders = getAllHeaders(request);
+//        System.out.println(allHeaders);
+        String bearerToken = request.getHeader("Authorization");
+        System.out.println(bearerToken);
+        System.out.println(requestObj.toString());
+
+        String passportDataJson = getPassportDataJson();
+
+//        FileInputStream fis = new FileInputStream("src/main/resources/mockPassportDataRes.json");
+//        String passportDataJson = IOUtils.toString(fis, StandardCharsets.UTF_8);
+
+        Object legalObj = objectMapper.readValue(passportDataJson, Object.class);
+
+
+        System.out.println("/gcp/docrest/v1");
+
+        return ResponseEntity
+                .status(200)
+                .body(legalObj);
     }
 
 
@@ -172,31 +214,6 @@ public class GCPMockController {
                 .body(legalObj);
     }
 
-    @PostMapping(value = "/gcp/docrest/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
-            , produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getPassportData(@RequestBody Object requestObj,
-                                                  HttpServletRequest request) throws IOException {
-
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        Map<String, String> allHeaders = getAllHeaders(request);
-//        System.out.println(allHeaders);
-        String bearerToken = request.getHeader("Authorization");
-        System.out.println(bearerToken);
-        System.out.println(requestObj.toString());
-
-        String passportDataJson = getPassportDataJson();
-
-//        FileInputStream fis = new FileInputStream("src/main/resources/mockPassportDataRes.json");
-//        String passportDataJson = IOUtils.toString(fis, StandardCharsets.UTF_8);
-
-        Object legalObj = objectMapper.readValue(passportDataJson, Object.class);
-
-
-        return ResponseEntity
-                .status(200)
-                .body(legalObj);
-    }
 
 
 

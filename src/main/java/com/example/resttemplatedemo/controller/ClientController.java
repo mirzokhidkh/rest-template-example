@@ -235,7 +235,6 @@ public class ClientController {
     public ResponseEntity<?> testForGET() throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         String legalJson = getLegalJson();
-
         Object legalObj = objectMapper.readValue(legalJson, Object.class);
 
         return ResponseEntity.status(200).body(legalObj);

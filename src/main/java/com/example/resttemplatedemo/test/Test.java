@@ -222,6 +222,19 @@ public class Test {
     }
 
 
+    public static String GetDataByDocResponseStringXMl2(){
+        return "<?xml version='1.0' encoding='UTF-8'?><env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
+                "    <env:Header/>\n" +
+                "    <env:Body>\n" +
+                "        <GetDataByDocResponse xmlns=\"http://fido.com/EasuEGServices\">\n" +
+                "            <Result>4</Result>\n" +
+                "            <Data/>\n" +
+                "            <Comments/>\n" +
+                "        </GetDataByDocResponse>\n" +
+                "    </env:Body>\n" +
+                "</env:Envelope>";
+    }
+
     public static  String getPersonAddressData1(){
         return "{\n" +
                 "    \"Data\": {\n" +
@@ -428,6 +441,180 @@ public class Test {
                 "  \"code\": 500\n" +
                 "}";
     }
+
+
+
+
+    public static  String getEisvoResponse(){
+        return "{\n" +
+                "  \"status\": 0,\n" +
+                "  \"errorMsg\": \"OK\",\n" +
+                "  \"timeStamp\": \"2024-04-01T10:07:32.432+00:00\",\n" +
+                "  \"gtkId\": 1711966052418,\n" +
+                "  \"contract\": {\n" +
+                "    \"idn\": \"200242936303896172249800002\",\n" +
+                "    \"rootIdn\": null,\n" +
+                "    \"cntrType\": \"98\",\n" +
+                "    \"oldIdn\": null,\n" +
+                "    \"bankId\": \"11432\",\n" +
+                "    \"mvesNo\": null,\n" +
+                "    \"mvesDate\": null,\n" +
+                "    \"govDcsnNo\": null,\n" +
+                "    \"govDcsnDate\": null,\n" +
+                "    \"okpo\": \"        \",\n" +
+                "    \"okonx\": \"01.13.1\",\n" +
+                "    \"contractorUzParentCompany\": null,\n" +
+                "    \"contractorUzName\": \"SAVLATSHOX SAVDO SERVIS LLC\",\n" +
+                "    \"rgnCode\": \"18\",\n" +
+                "    \"industrialZoneCode\": 0,\n" +
+                "    \"contractorUzAddress\": \"Republic of Uzbekistan, Samarkand region, Akdarya district, Uzbekistan st.\",\n" +
+                "    \"contractorUzPhone\": \"--\",\n" +
+                "    \"cntrSubject\": 1,\n" +
+                "    \"currCode1\": null,\n" +
+                "    \"currCode2\": null,\n" +
+                "    \"amount1\": null,\n" +
+                "    \"amount2\": null,\n" +
+                "    \"accCurrCode1\": null,\n" +
+                "    \"accCurrCode2\": null,\n" +
+                "    \"contractorForName\": null,\n" +
+                "    \"contractorForCountryCode\": null,\n" +
+                "    \"contractorForAddress\": null,\n" +
+                "    \"bankForName\": null,\n" +
+                "    \"bankForCountryCode\": null,\n" +
+                "    \"bankForAddress\": null,\n" +
+                "    \"bankForAttributes\": null,\n" +
+                "    \"centralBankLetterNo\": null,\n" +
+                "    \"centralBankLetterDate\": null,\n" +
+                "    \"creditRate\": null,\n" +
+                "    \"leasingFlag\": null,\n" +
+                "    \"productsName\": \"ГРЕЦКИЙ ОРЕХ\",\n" +
+                "    \"docNo\": \"2\",\n" +
+                "    \"docDate\": \"2024-03-29\",\n" +
+                "    \"execType\": null,\n" +
+                "    \"execDate\": null,\n" +
+                "    \"reestrRegNo\": null,\n" +
+                "    \"softwareName\": null,\n" +
+                "    \"cntrStatus\": 0,\n" +
+                "    \"lockDate\": null,\n" +
+                "    \"status\": 0,\n" +
+                "    \"cstDate\": null,\n" +
+                "    \"contractorUzInn\": \"303896172\",\n" +
+                "    \"receivableTotal1\": 0,\n" +
+                "    \"receivableOverdue1\": 0,\n" +
+                "    \"receivableTotal2\": 0,\n" +
+                "    \"receivableOverdue2\": 0,\n" +
+                "    \"payableTotal1\": 0,\n" +
+                "    \"payableOverdue1\": 0,\n" +
+                "    \"payableTotal2\": 0,\n" +
+                "    \"payableOverdue2\": 0,\n" +
+                "    \"insTime\": \"2024-03-29T10:37:24.796+00:00\",\n" +
+                "    \"specifications\": [\n" +
+                "      {\n" +
+                "        \"docDate\": \"2024-03-29\",\n" +
+                "        \"amount\": null,\n" +
+                "        \"agrmNo\": null,\n" +
+                "        \"currCode\": null,\n" +
+                "        \"cstDate\": null,\n" +
+                "        \"docType\": 0,\n" +
+                "        \"docNo\": \"0\",\n" +
+                "        \"imExFlag\": 1,\n" +
+                "        \"serialNo\": 1,\n" +
+                "        \"insTime\": \"2024-03-29T10:37:24.805+00:00\",\n" +
+                "        \"oldNo\": null,\n" +
+                "        \"status\": 0,\n" +
+                "        \"confirmations\": [],\n" +
+                "        \"goods\": [\n" +
+                "          {\n" +
+                "            \"tnCode\": \"0802310000\",\n" +
+                "            \"itemsName\": \"ГРЕЦКИЙ ОРЕХ\",\n" +
+                "            \"serialNo\": 1,\n" +
+                "            \"unitCode\": null,\n" +
+                "            \"quantity\": \"0.0\",\n" +
+                "            \"currCode\": \"0\",\n" +
+                "            \"cost\": \"0.0\",\n" +
+                "            \"amount\": \"0.0\",\n" +
+                "            \"insTime\": \"2024-03-29T10:37:24.808+00:00\",\n" +
+                "            \"status\": 0\n" +
+                "          }\n" +
+                "        ],\n" +
+                "        \"fare\": null,\n" +
+                "        \"services\": []\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"docDate\": \"2024-03-29\",\n" +
+                "        \"amount\": null,\n" +
+                "        \"agrmNo\": null,\n" +
+                "        \"currCode\": null,\n" +
+                "        \"cstDate\": null,\n" +
+                "        \"docType\": 0,\n" +
+                "        \"docNo\": \"0\",\n" +
+                "        \"imExFlag\": 0,\n" +
+                "        \"serialNo\": 2,\n" +
+                "        \"insTime\": \"2024-03-29T10:37:24.812+00:00\",\n" +
+                "        \"oldNo\": null,\n" +
+                "        \"status\": 0,\n" +
+                "        \"confirmations\": [],\n" +
+                "        \"goods\": [\n" +
+                "          {\n" +
+                "            \"tnCode\": \"0802320000\",\n" +
+                "            \"itemsName\": \"ГРЕЦКИЙ ОРЕХ\",\n" +
+                "            \"serialNo\": 1,\n" +
+                "            \"unitCode\": null,\n" +
+                "            \"quantity\": \"0.0\",\n" +
+                "            \"currCode\": \"0\",\n" +
+                "            \"cost\": \"0.0\",\n" +
+                "            \"amount\": \"0.0\",\n" +
+                "            \"insTime\": \"2024-03-29T10:37:24.817+00:00\",\n" +
+                "            \"status\": 0\n" +
+                "          }\n" +
+                "        ],\n" +
+                "        \"fare\": null,\n" +
+                "        \"services\": []\n" +
+                "      }\n" +
+                "    ],\n" +
+                "    \"performedServices\": [],\n" +
+                "    \"consignors\": [],\n" +
+                "    \"consignees\": [],\n" +
+                "    \"manufacturers\": [],\n" +
+                "    \"deliveryTerms\": [],\n" +
+                "    \"financeInfos\": [],\n" +
+                "    \"agreements\": [],\n" +
+                "    \"endContract\": null,\n" +
+                "    \"exportTerms\": [],\n" +
+                "    \"internalShipments\": null,\n" +
+                "    \"tollingTerms\": [],\n" +
+                "    \"importTerms\": [],\n" +
+                "    \"barterTerms\": [],\n" +
+                "    \"transfers\": [],\n" +
+                "    \"delegates\": [],\n" +
+                "    \"declarations\": [],\n" +
+                "    \"guarantees\": [],\n" +
+                "    \"lettersOfCredit\": [],\n" +
+                "    \"policies\": [],\n" +
+                "    \"receivableDrops\": [],\n" +
+                "    \"payableDrops\": [],\n" +
+                "    \"penalties\": [],\n" +
+                "    \"commissions\": [],\n" +
+                "    \"taxAgencyPenalties\": [],\n" +
+                "    \"receivableInfos\": [],\n" +
+                "    \"funds\": [],\n" +
+                "    \"refundsExp\": [],\n" +
+                "    \"movesToEx\": [],\n" +
+                "    \"movesFromEx\": [],\n" +
+                "    \"paymentRefs\": [],\n" +
+                "    \"taxes\": [],\n" +
+                "    \"compensations\": [],\n" +
+                "    \"sales\": [],\n" +
+                "    \"leasePayments\": [],\n" +
+                "    \"payments\": [],\n" +
+                "    \"refundsImp\": [],\n" +
+                "    \"movesToIm\": [],\n" +
+                "    \"movesFromIm\": [],\n" +
+                "    \"exchangePayments\": []\n" +
+                "  }\n" +
+                "}";
+    }
+
 
 
 

@@ -43,17 +43,17 @@ public class EPolisController {
             @RequestParam String CLIENT_ADDRESS,
             @RequestParam String CLIENT_PHONE,
             @RequestParam String CLIENT_PASSPORT,
-//            @RequestParam String BENEFICIARY_NAME,
+            @RequestParam String BENEFICIARY_NAME,
             @RequestParam String OBJECT,
             @RequestParam int INSURANCE_COST,
             @RequestParam String PERIOD_BEGIN,
             @RequestParam String PERIOD_END,
-            @RequestParam int CREDIT_ID,
-            @RequestParam int AGENT_PHONE,
+            @RequestParam String CREDIT_ID,
+            @RequestParam String AGENT_PHONE,
             HttpServletRequest servletRequest) throws JsonProcessingException {
 
 //        System.out.println(ePolisModel);
-        System.out.println(USERNAME);
+        System.out.println(CLIENT_NAME);
 //int s = 10000000;
 
         String getNewOrg = getGetNewOrg();
