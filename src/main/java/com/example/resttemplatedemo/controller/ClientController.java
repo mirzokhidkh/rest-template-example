@@ -294,15 +294,18 @@ public class ClientController {
         }
 
 //        Resource resource = new FileSystemResource("D:\\C DISK\\desktop\\mini desktop\\fb\\CLIENT services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
-        Resource resource = new FileSystemResource("D:\\my-desktop\\mini-desktop\\fb\\CLIENT-services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
+//        Resource resource = new FileSystemResource("D:\\my-desktop\\mini-desktop\\fb\\CLIENT-services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
+//        Resource resource = new FileSystemResource("D:\\my-desktop\\mini-desktop\\work\\fb\\CLIENT-services\\uz-avto-savdo-client\\UzAvtoSavdo Bank API.pdf");
+        Resource resource = new FileSystemResource("D:\\my-desktop\\mini-desktop\\work\\fb\\CLIENT-services\\luna-platform-client\\error\\image\\4dc1c958-556a-470c-8dfb-334cb39e486c.jpg");
 
 
-        String contentType = "application/octet-stream";
+//        String contentType = "application/octet-stream";
         String headerValue = "attachment; filename=\"" + resource.getFilename() + "\"";
 
         return ResponseEntity.ok()
 //                .contentType(MediaType.parseMediaType(contentType))
-                .contentType(MediaType.APPLICATION_PDF)
+//                .contentType(MediaType.APPLICATION_PDF)
+                .contentType(MediaType.IMAGE_JPEG)
 //                .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .header(HttpHeaders.CONTENT_DISPOSITION, headerValue)
                 .body(resource);
