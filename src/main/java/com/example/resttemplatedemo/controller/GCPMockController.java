@@ -213,6 +213,27 @@ public class GCPMockController {
                 .status(200)
                 .body(legalObj);
     }
+    @PostMapping(value = "/service/stat/ktyadr/v1", consumes = {MediaType.APPLICATION_JSON_VALUE}
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getOrgInfoSystem(@RequestBody Object requestObj,
+                                           HttpServletRequest request) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        Map<String, String> allHeaders = getAllHeaders(request);
+//        System.out.println(allHeaders);
+        String bearerToken = request.getHeader("Authorization");
+        System.out.println(bearerToken);
+        System.out.println(requestObj.toString());
+
+        String infoSystemResponse = getOrgInfoSystemResponse();
+
+        Object legalObj = objectMapper.readValue(infoSystemResponse, Object.class);
+
+        return ResponseEntity
+                .status(200)
+                .body(legalObj);
+    }
 
 
 

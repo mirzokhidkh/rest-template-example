@@ -24,7 +24,7 @@ public class Test {
         return headersMap;
     }
 
-    public static String getMGResponseStringXml(){
+    public static String getMGResponseStringXml() {
         return "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                 "    <s:Body xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n" +
                 "        <MGResponse xmlns=\"urn:cbs-messagegatewaysoap:2015-01-01\">\n" +
@@ -41,7 +41,6 @@ public class Test {
                 "    </s:Body>\n" +
                 "</s:Envelope>";
     }
-
 
 
     public static MGResponse getMGResponse() throws DatatypeConfigurationException {
@@ -104,7 +103,6 @@ public class Test {
     }
 
 
-
     public static CEPResponse getResponseXml() {
         CEPResponse cepResponse = new CEPResponse();
         cepResponse.setResult("1");
@@ -140,7 +138,7 @@ public class Test {
     }
 
 
-    public static String getCEPResponseStringXMl(){
+    public static String getCEPResponseStringXMl() {
         return "<env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                 "    <env:Header/>\n" +
                 "    <env:Body>\n" +
@@ -181,7 +179,7 @@ public class Test {
     }
 
 
-    public static String GetDataByDocResponseStringXMl(){
+    public static String GetDataByDocResponseStringXMl() {
         return "<?xml version='1.0' encoding='UTF-8'?><env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                 "    <env:Header/>\n" +
                 "    <env:Body>\n" +
@@ -222,7 +220,7 @@ public class Test {
     }
 
 
-    public static String GetDataByDocResponseStringXMl2(){
+    public static String GetDataByDocResponseStringXMl2() {
         return "<?xml version='1.0' encoding='UTF-8'?><env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                 "    <env:Header/>\n" +
                 "    <env:Body>\n" +
@@ -235,7 +233,7 @@ public class Test {
                 "</env:Envelope>";
     }
 
-    public static  String getPersonAddressData1(){
+    public static String getPersonAddressData1() {
         return "{\n" +
                 "    \"Data\": {\n" +
                 "        \"PermanentRegistration\": null,\n" +
@@ -246,7 +244,8 @@ public class Test {
                 "    \"AnswereComment\": \"\"\n" +
                 "}";
     }
- public static  String getPersonAddressData2(){
+
+    public static String getPersonAddressData2() {
         return "{\n" +
                 "    \"AnswereId\": 5,\n" +
                 "    \"AnswereMessage\": \"ЖШШР: 30410785050012 топилмади\",\n" +
@@ -254,7 +253,7 @@ public class Test {
                 "}";
     }
 
-    public static String getPersonAddressData(){
+    public static String getPersonAddressData() {
         return "{\n" +
                 "  \"Data\": {\n" +
                 "    \"PermanentRegistration\": {\n" +
@@ -321,7 +320,7 @@ public class Test {
     }
 
 
-    public static  String getIndividualJson(){
+    public static String getIndividualJson() {
         return "{\n" +
                 "    \"document_type\": 1,\n" +
                 "    \"passport_serial\": \"AD3957911\",\n" +
@@ -347,7 +346,7 @@ public class Test {
     }
 
 
-    public static  String getLegalJson() {
+    public static String getLegalJson() {
         return "{\n" +
                 "    \"name\": \"\\\"TEST UCHUN\\\" Xususiy korxona\",\n" +
                 "    \"shortname\": \"\\\"TEST UCHUN\\\" XK\",\n" +
@@ -364,7 +363,7 @@ public class Test {
     }
 
 
-    public static  String getPassportDataJson(){
+    public static String getPassportDataJson() {
         return "{\n" +
                 "    \"result\": \"1\",\n" +
                 "    \"data\": [\n" +
@@ -420,7 +419,7 @@ public class Test {
     }
 
 
-    public static  String getCreditReportKATM(){
+    public static String getCreditReportKATM() {
         return "{\n" +
                 "    \"data\": {\n" +
                 "        \"result\": \"05050\",\n" +
@@ -434,7 +433,7 @@ public class Test {
     }
 
 
-    public static  String getCreditReportKATMError(){
+    public static String getCreditReportKATMError() {
         return "{\n" +
                 "  \"data\": null,\n" +
                 "  \"errorMessage\": \"pReason: Поле должно содержать только цифры 0-9, pActivity: Поле должно содержать только цифры 0-9\",\n" +
@@ -443,9 +442,7 @@ public class Test {
     }
 
 
-
-
-    public static  String getEisvoResponse(){
+    public static String getEisvoResponse() {
         return "{\n" +
                 "  \"status\": 0,\n" +
                 "  \"errorMsg\": \"OK\",\n" +
@@ -616,8 +613,57 @@ public class Test {
     }
 
 
+    public static String getOrgInfoSystemResponse() {
+        return "{\n" +
+                "    \"INFO DATE\": \"2024-04-08 17:23:26\",\n" +
+                "    \"INN\": \"201838002\",\n" +
+                "    \"OKPO\": \"16174825\",\n" +
+                "    \"REG_NOM\": \"292\",\n" +
+                "    \"REG_DATA\": \"1999-12-11\",\n" +
+                "    \"SOOGU\": \"79994\",\n" +
+                "    \"SOATO\": \"1726273\",\n" +
+                "    \"NAME\": \"\\\"UNITEL\\\" mas`uliyati cheklangan jamiyati xorijiy korxonasi\",\n" +
+                "    \"NAME_S\": \"\\\"UNITEL\\\" MChJ XK\",\n" +
+                "    \"ADRES\": \"Toshkent shahri, Mirobod tumani\",\n" +
+                "    \"STREET\": \"Banokatiy MFY, Buxoro ko`chasi, 1-uy\",\n" +
+                "    \"PHONE\": \"903730330\",\n" +
+                "    \"EMAIL\": \"0611@BEELINE.UZ\",\n" +
+                "    \"OPF\": \"152\",\n" +
+                "    \"CSDP\": \"11\",\n" +
+                "    \"OKED\": \"61200\",\n" +
+                "    \"OKSM_1\": \"528\",\n" +
+                "    \"NAMU_1\": \"VEON Uzbekistan Holding B.V.\",\n" +
+                "    \"OKSM_2\": \"528\",\n" +
+                "    \"NAMU_2\": \"VEON Central Asia B.V.\",\n" +
+                "    \"OKSM_3\": \"\",\n" +
+                "    \"NAMU_3\": \"\",\n" +
+                "    \"OKSM_4\": \"\",\n" +
+                "    \"NAMU_4\": \"\",\n" +
+                "    \"OKSM_5\": \"\",\n" +
+                "    \"NAMU_5\": \"\",\n" +
+                "    \"UF_1\": \"244271513.2477\",\n" +
+                "    \"DOL_1\": \"70.0000\",\n" +
+                "    \"UF_2\": \"104687791.3919\",\n" +
+                "    \"DOL_2\": \"30.0000\",\n" +
+                "    \"UF_3\": \"\",\n" +
+                "    \"DOL_3\": \"\",\n" +
+                "    \"UF_4\": \"\",\n" +
+                "    \"DOL_4\": \"\",\n" +
+                "    \"UF_5\": \"\",\n" +
+                "    \"DOL_5\": \"\",\n" +
+                "    \"DIRECTOR\": \"ANDRZEJ EDWARD MALINOWSKI XXX\"\n" +
+                "}";
+    }
 
 
+    public static String getOrgInfoSystemResponseError() {
+
+        return "{\n" +
+                "    \"result_code\": \"2\",\n" +
+                "    \"result_message\": \"Ushbu stir bilan korxona topilmadi\"\n" +
+                "}";
+
+    }
 
 
-}
+    }
