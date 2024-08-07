@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>rest-client-service</name>
     <description>rest-client-service</description>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -105,6 +105,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.kafka</groupId>-->
+<!--            <artifactId>kafka-clients</artifactId>-->
+<!--            <version>3.7.1</version>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>3.1.4</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -113,6 +129,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.example.resttemplatedemo.RestTemplateDemoApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

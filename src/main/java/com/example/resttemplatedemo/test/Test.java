@@ -665,5 +665,93 @@ public class Test {
 
     }
 
+    public static String getAgreementResponseJsonStr() {
+
+        return "{\n" +
+                "  \"query_id\": \"24205000000000142800\",\n" +
+                "  \"code\": \"15000\",\n" +
+                "  \"message\": \"Успешно\",\n" +
+                "  \"opened\": \"22.12.2023\",\n" +
+                "  \"state\": \"01\",\n" +
+                "  \"closed\": \"\",\n" +
+                "  \"bank\": \"067\",\n" +
+                "  \"contract\": {\n" +
+                "    \"id\": \"2023309279057203125001\",\n" +
+                "    \"ex_id\": \"2023309279057203125001\",\n" +
+                "    \"number\": \"095/2023\",\n" +
+                "    \"debt_type\": \"02\",\n" +
+                "    \"credit_type\": \"02\",\n" +
+                "    \"debt_kind\": \"03\",\n" +
+                "    \"date\": \"14.07.2023\",\n" +
+                "    \"debt_sum\": \"\",\n" +
+                "    \"debt_ pct\": \"\",\n" +
+                "    \"contract_sum\": {\n" +
+                "      \"sum\": 132811548.2,\n" +
+                "      \"currency\": \"156\",\n" +
+                "      \"currency_debt\": \"156\",\n" +
+                "      \"currency_pct\": \"156\"\n" +
+                "    },\n" +
+                "    \"float_pct\": {\n" +
+                "      \"type_pct\": \"\",\n" +
+                "      \"margin\": \"\"\n" +
+                "    },\n" +
+                "    \"fix_sum\": null,\n" +
+                "    \"fix_pct\": \"5.9\",\n" +
+                "    \"term\": \"12\",\n" +
+                "    \"first_term\": \"12\",\n" +
+                "    \"target\": \"Куёш станцияси куриш\",\n" +
+                "    \"doc_number\": \"3166-09\",\n" +
+                "    \"doc_date\": \"22.12.2023\",\n" +
+                "    \"period_debt\": \"01\",\n" +
+                "    \"period_pct\": \"01\",\n" +
+                "    \"creditor\": {\n" +
+                "      \"name\": \"ГПБ Комплект АЖ\",\n" +
+                "      \"country\": \"643\",\n" +
+                "      \"foreign_org\": \"03\",\n" +
+                "      \"uzb_org\": \"\",\n" +
+                "      \"inn\": \"\",\n" +
+                "      \"region\": \"\",\n" +
+                "      \"oked\": \"\",\n" +
+                "      \"state_sector\": \"\",\n" +
+                "      \"sector\": \"\",\n" +
+                "      \"economy\": \"\",\n" +
+                "      \"attitude\": \"\"\n" +
+                "    },\n" +
+                "    \"loan\": {\n" +
+                "      \"name\": \"KHONOBOD SOLAR ENERGY\",\n" +
+                "      \"country\": \"\",\n" +
+                "      \"foreign_org\": \"\",\n" +
+                "      \"uzb_org\": \"03\",\n" +
+                "      \"inn\": \"309279057\",\n" +
+                "      \"region\": \"26\",\n" +
+                "      \"oked\": \"35119\",\n" +
+                "      \"state_sector\": \"01\",\n" +
+                "      \"sector\": \"09\",\n" +
+                "      \"economy\": \"01\",\n" +
+                "      \"attitude\": \"04\"\n" +
+                "    },\n" +
+                "    \"admission\": [\n" +
+                "      {\n" +
+                "        \"year\": \"2023\",\n" +
+                "        \"first\": 0,\n" +
+                "        \"second\": 0,\n" +
+                "        \"third\": 0,\n" +
+                "        \"fourth\": 0\n" +
+                "      }\n" +
+                "    ],\n" +
+                "    \"repayment\": [\n" +
+                "      {\n" +
+                "        \"year\": \"2023\",\n" +
+                "        \"first\": 0,\n" +
+                "        \"second\": 0,\n" +
+                "        \"third\": 0,\n" +
+                "        \"fourth\": 0\n" +
+                "      }\n" +
+                "    ]\n" +
+                "  }\n" +
+                "}";
+
+    }
+
 
     }

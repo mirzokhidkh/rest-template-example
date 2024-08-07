@@ -90,8 +90,8 @@ public class GCPMockController {
         System.out.println(bearerToken);
 
 //        CEPResponse cepResponse = getResponseXml();
-//        String cepResponse = GetDataByDocResponseStringXMl();
-        String cepResponse = GetDataByDocResponseStringXMl2();
+        String cepResponse = GetDataByDocResponseStringXMl();
+//        String cepResponse = GetDataByDocResponseStringXMl2();
 
 //        return cepResponse;
 

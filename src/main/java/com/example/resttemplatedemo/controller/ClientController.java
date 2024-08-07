@@ -32,10 +32,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+//import static com.example.resttemplatedemo.test.LargeDataJson.getBigData;
 import static com.example.resttemplatedemo.test.Test.*;
 
 @RestController
@@ -98,6 +101,35 @@ public class ClientController {
 //                .status(503)
 //                .body(null);
     }
+
+    @PostMapping(value = "/getAgreement"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Object> getAgreement(@RequestBody Object obj,
+                                       HttpServletRequest request
+    ) throws JsonProcessingException, InterruptedException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        String agreementResponseJsonStr = getAgreementResponseJsonStr();
+
+        Object agreementResponse = objectMapper.readValue(agreementResponseJsonStr, Object.class);
+
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String json = ow.writeValueAsString(obj);
+        System.out.println(json);
+
+//        Thread.sleep(31*1000);
+//
+        System.out.println("RESPONSE");
+
+
+        return ResponseEntity
+                .status(200)
+                .body(agreementResponse);
+
+    }
+
 
     @PostMapping(value = "/test-4xx"
             , consumes = MediaType.APPLICATION_JSON_VALUE
@@ -359,5 +391,73 @@ public class ClientController {
                 .status(200)
                 .body(legalObj);
     }
+
+
+    @PostMapping(value = "/testString"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.TEXT_PLAIN_VALUE
+    )
+    public ResponseEntity<Object> testString(@RequestBody Object obj,
+                                        HttpServletRequest request
+    ) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String legalJson = getLegalJson();
+        Object legalObj = objectMapper.readValue(legalJson, Object.class);
+        System.out.println(obj);
+        return ResponseEntity
+                .status(200)
+                .body("Hello");
+    }
+
+
+    @PostMapping(value = "/test-big-respose-data"
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Object> testBigResponseData(@RequestBody Object obj,
+                                       HttpServletRequest request
+    ) throws IOException, InterruptedException {
+        ObjectMapper objectMapper = new ObjectMapper();
+//        Map<String, String> headers = getAllHeaders(request);
+//        System.out.println(headers);
+
+//        String bigData = getBigData();
+//        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/resttemplatedemo/test/bigData.json")));
+        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/resttemplatedemo/test/get-client-card-list.txt")));
+        Object bigDataJson = objectMapper.readValue(bigData, Object.class);
+
+//        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+//        String json = ow.writeValueAsString(obj);
+//        System.out.println(json);
+
+//        Thread.sleep(31*1000);
+//
+        System.out.println("RESPONSE");
+
+
+        return ResponseEntity
+                .status(200)
+                .body(bigDataJson);
+//                .status(503)
+//                .body(null);
+    }
+
+
+
+
+
+
+//    public static void main(String[] args) throws IOException {
+//        ObjectMapper objectMapper = new ObjectMapper();
+//
+//        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/resttemplatedemo/test/bigData.json")));
+//        Object bigDataJson = objectMapper.readValue(bigData, Object.class);
+//
+//                ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+//        String json = ow.writeValueAsString(bigDataJson);
+//        System.out.println(json);
+//
+//    }
+
 
 }
