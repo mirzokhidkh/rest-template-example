@@ -1,12 +1,7 @@
-package com.example.resttemplatedemo.kafka;
+package com.example.resttemplatedemo.kafka.producer;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Future;
 
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;

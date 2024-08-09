@@ -1,4 +1,4 @@
-package com.example.resttemplatedemo.kafka;
+package com.example.resttemplatedemo.kafka.producer;
 
 import java.util.Properties;
 import java.util.concurrent.Future;
