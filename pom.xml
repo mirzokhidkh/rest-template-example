@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>rest-client-service</artifactId>
+    <artifactId>mock-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rest-client-service</name>
-    <description>rest-client-service</description>
+    <description>mock-api-service</description>
     <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
@@ -132,7 +132,7 @@
     </dependencies>
 
     <build>
-        <finalName>crud-service</finalName>
+        <finalName>mpck-api-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -143,7 +143,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.example.resttemplatedemo.RestTemplateDemoApplication</mainClass>
+                    <mainClass>com.example.mockapi.MockApiDemoApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
