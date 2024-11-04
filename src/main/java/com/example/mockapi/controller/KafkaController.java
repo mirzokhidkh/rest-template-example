@@ -27,10 +27,14 @@ public class KafkaController {
     }
 
     @PostMapping("/testKafka")
-    private ResponseEntity<?> sendToTest(@RequestBody String request)  {
+    private ResponseEntity<?> sendToTest(@RequestBody String request) throws JsonProcessingException {
         myKafkaProducer.sent2Test(request,"test");
         System.out.println(request);
-        return ResponseEntity.ok("OK");
+
+
+        KafkaEsbsRecord kafkaEsbsRecord = objectMapper.readValue(request, KafkaEsbsRecord.class);
+
+        return ResponseEntity.ok("OK 1"+ kafkaEsbsRecord.getHeader().getRequestId());
     }
 
 }

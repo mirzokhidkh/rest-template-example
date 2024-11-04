@@ -27,14 +27,14 @@ public class Test {
 
         createLoanContract.setData(guars);
 
-        validateUser(createLoanContract);
+        validateRequest(createLoanContract);
 
 
 
 
     }
 
-    public static void validateUser(Object userRequest) {
+    private static void validateRequest(Object userRequest) {
 
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
@@ -42,7 +42,7 @@ public class Test {
         if (!violations.isEmpty()) {
             StringBuilder errorMessage = new StringBuilder();
             for (ConstraintViolation<Object> violation : violations) {
-                errorMessage.append(violation.getPropertyPath().toString()).append("-").append(violation.getMessage()).append("\n");
+                errorMessage.append(violation.getPropertyPath().toString()).append("-").append(violation.getMessage()).append(", ");
             }
             throw new RuntimeException("Validation failed: \n"+ errorMessage);
         }
