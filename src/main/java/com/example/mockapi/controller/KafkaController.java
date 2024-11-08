@@ -23,7 +23,7 @@ public class KafkaController {
 
         String requestStr = objectMapper.writeValueAsString(request);
         myKafkaProducer.sendReq2TopicIn(requestStr);
-        return ResponseEntity.ok("OK");
+        return ResponseEntity.ok("OK "+ request.getHeader().getRequestId());
     }
 
     @PostMapping("/testKafka")
