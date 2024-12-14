@@ -125,7 +125,8 @@ public class GCPMockController {
         System.out.println(bearerToken);
         System.out.println(requestObj.toString());
 
-        String passportDataJson = getPassportDataJson();
+//        String passportDataJson = getPassportDataJson();
+        String passportDataJson = getPassportDataJson2();
 
 //        FileInputStream fis = new FileInputStream("src/main/resources/mockPassportDataRes.json");
 //        String passportDataJson = IOUtils.toString(fis, StandardCharsets.UTF_8);

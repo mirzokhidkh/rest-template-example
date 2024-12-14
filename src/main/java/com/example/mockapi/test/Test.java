@@ -421,6 +421,60 @@ public class Test {
     }
 
 
+  public static String getPassportDataJson2() {
+        return "{\n" +
+                "\t\"result\": \"1\",\n" +
+                "\t\"data\": [\n" +
+                "\t\t{\n" +
+                "\t\t\t\"transaction_id\": 3,\n" +
+                "\t\t\t\"current_pinpp\": \"51012076020026\",\n" +
+                "\t\t\t\"pinpps\": [\n" +
+                "\t\t\t\t\"51012076020026\",\n" +
+                "\t\t\t\t\"51012076020019\"\n" +
+                "\t\t\t],\n" +
+                "\t\t\t\"current_document\": null,\n" +
+                "\t\t\t\"documents\": [\n" +
+                "\t\t\t\t{\n" +
+                "\t\t\t\t\t\"document\": \"AD5405767\",\n" +
+                "\t\t\t\t\t\"type\": \"IDMS_RECV_MVD_IDCARD_CITIZEN\",\n" +
+                "\t\t\t\t\t\"docgiveplace\": \"АКДАРЬИНСКИЙ РОВД САМАРКАНДСКОЙ ОБЛАСТИ\",\n" +
+                "\t\t\t\t\t\"docgiveplaceid\": 18203,\n" +
+                "\t\t\t\t\t\"datebegin\": \"2023-12-13\",\n" +
+                "\t\t\t\t\t\"dateend\": \"2033-12-12\",\n" +
+                "\t\t\t\t\t\"status\": 2\n" +
+                "\t\t\t\t},\n" +
+                "\t\t\t\t{\n" +
+                "\t\t\t\t\t\"document\": \"I-SM0284046\",\n" +
+                "\t\t\t\t\t\"type\": \"IDMS_RECV_MJ_BIRTH_CERTS\",\n" +
+                "\t\t\t\t\t\"docgiveplace\": \"ОТДЕЛ ЗАГС АКДАРЬИНСКОГО РАЙОНА\",\n" +
+                "\t\t\t\t\t\"docgiveplaceid\": 1407,\n" +
+                "\t\t\t\t\t\"datebegin\": \"2007-12-13\",\n" +
+                "\t\t\t\t\t\"dateend\": null,\n" +
+                "\t\t\t\t\t\"status\": 4\n" +
+                "\t\t\t\t}\n" +
+                "\t\t\t],\n" +
+                "\t\t\t\"surnamelat\": \"SAYDULLAYEV\",\n" +
+                "\t\t\t\"namelat\": \"BAXODIR\",\n" +
+                "\t\t\t\"patronymlat\": \"JASUR O‘G‘LI\",\n" +
+                "\t\t\t\"birth_date\": \"2007-12-10\",\n" +
+                "\t\t\t\"birthplace\": \"OQDARYO TUMANI\",\n" +
+                "\t\t\t\"birthcountry\": \"УЗБЕКИСТАН\",\n" +
+                "\t\t\t\"birthcountryid\": 182,\n" +
+                "\t\t\t\"livestatus\": 1,\n" +
+                "\t\t\t\"nationality\": \"УЗБЕК/УЗБЕЧКА\",\n" +
+                "\t\t\t\"nationalityid\": 44,\n" +
+                "\t\t\t\"citizenship\": \"УЗБЕКИСТАН\",\n" +
+                "\t\t\t\"citizenshipid\": 182,\n" +
+                "\t\t\t\"sex\": 1\n" +
+                "\t\t}\n" +
+                "\t],\n" +
+                "\t\"comments\": \"\"\n" +
+                "}";
+
+        //  Тошмат Ўғли
+    }
+
+
     public static String getCreditReportKATM() {
         return "{\n" +
                 "    \"data\": {\n" +
