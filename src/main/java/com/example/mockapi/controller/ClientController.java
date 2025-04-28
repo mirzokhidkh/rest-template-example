@@ -65,6 +65,9 @@ public class ClientController {
     public ResponseEntity<Object> test(@RequestBody Object obj,
                                        HttpServletRequest request
     ) throws JsonProcessingException, InterruptedException {
+
+        Thread.sleep(120000);
+
         ObjectMapper objectMapper = new ObjectMapper();
 //        Map<String, String> headers = getAllHeaders(request);
 //        System.out.println(headers);
@@ -235,6 +238,7 @@ public class ClientController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> testForGET(@RequestParam Integer id) {
+
         ExampleDTO exampleDTO = new ExampleDTO(id, null);
         return ResponseEntity.status(200).body(exampleDTO);
 
@@ -410,7 +414,9 @@ public class ClientController {
 
 //        String bigData = getBigData();
 //        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/resttemplatedemo/test/bigData.json")));
-        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/resttemplatedemo/test/get-client-card-list.txt")));
+//        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/resttemplatedemo/test/get-client-card-list.txt")));
+//        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/mockapi/test/big/checkRequest_Response.json")));
+        String bigData = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/mockapi/test/big/big-json-data.txt")));
         Object bigDataJson = objectMapper.readValue(bigData, Object.class);
 
 //        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();

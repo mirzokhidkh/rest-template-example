@@ -669,6 +669,495 @@ public class Test {
     }
 
 
+    public static String getMockContractGetResponseV4() {
+
+
+         return  "{\n" +
+                "\t\"status\": 0,\n" +
+                "\t\"errorMsg\": \"OK\",\n" +
+                "\t\"timeStamp\": \"2024-12-20 16:07:52\",\n" +
+                "\t\"gtkId\": 17346928722286,\n" +
+                "\t\"contract\": {\n" +
+                "\t\t\"idn\": \"201214479304934740180100001\",\n" +
+                "\t\t\"cntrType\": \"01\",\n" +
+                "\t\t\"oldIdn\": null,\n" +
+                "\t\t\"bankId\": \"11348\",\n" +
+                "\t\t\"mvesNo\": null,\n" +
+                "\t\t\"mvesDate\": null,\n" +
+                "\t\t\"govDcsnNo\": null,\n" +
+                "\t\t\"govDcsnDate\": null,\n" +
+                "\t\t\"okpo\": \"27191577\",\n" +
+                "\t\t\"okonx\": \"08.11.0\",\n" +
+                "\t\t\"contractorUzParentCompany\": \"Вышестоящая организация отсутсвует\",\n" +
+                "\t\t\"contractorUzName\": \"OOO ELIBOY-INVES\",\n" +
+                "\t\t\"rgnCode\": \"18\",\n" +
+                "\t\t\"industrialZoneCode\": 0,\n" +
+                "\t\t\"contractorUzAddress\": \"РУз., Сам.обл., Нарпайск.р-н., г.Акташ, Тинчлик МФ\",\n" +
+                "\t\t\"contractorUzPhone\": \"998902700047\",\n" +
+                "\t\t\"cntrSubject\": 1,\n" +
+                "\t\t\"currCode1\": \"840\",\n" +
+                "\t\t\"currCode2\": null,\n" +
+                "\t\t\"amount1\": 20700.0,\n" +
+                "\t\t\"amount2\": 0.0,\n" +
+                "\t\t\"accCurrCode1\": \"840\",\n" +
+                "\t\t\"accCurrCode2\": null,\n" +
+                "\t\t\"contractorForName\": \"ИП Абдунабиев Б.Ф.\",\n" +
+                "\t\t\"contractorForCountryCode\": \"398\",\n" +
+                "\t\t\"contractorForAddress\": \"Казахстан, г.Актау\",\n" +
+                "\t\t\"bankForName\": \"Ф-л АО FORTE BANK, г.Актау\",\n" +
+                "\t\t\"bankForCountryCode\": \"398\",\n" +
+                "\t\t\"bankForAddress\": null,\n" +
+                "\t\t\"bankForAttributes\": \"Acc.: KZ9196511F0007321453 Счет USD, \\nБИН 050141000877, SWIFT code: IRTYKZKA\",\n" +
+                "\t\t\"centralBankLetterNo\": null,\n" +
+                "\t\t\"centralBankLetterDate\": null,\n" +
+                "\t\t\"creditRate\": 0,\n" +
+                "\t\t\"leasingFlag\": 0,\n" +
+                "\t\t\"productsName\": \"Продажа товара - мел (микрокальцит)\",\n" +
+                "\t\t\"docNo\": \"10052017-2\",\n" +
+                "\t\t\"docDate\": \"2018-03-17\",\n" +
+                "\t\t\"execType\": 1,\n" +
+                "\t\t\"execDate\": null,\n" +
+                "\t\t\"reestrRegNo\": null,\n" +
+                "\t\t\"softwareName\": null,\n" +
+                "\t\t\"cntrStatus\": 0,\n" +
+                "\t\t\"lockDate\": null,\n" +
+                "\t\t\"status\": 1,\n" +
+                "\t\t\"cstDate\": null,\n" +
+                "\t\t\"contractorUzInn\": \"304934740\",\n" +
+                "\t\t\"receivableTotal1\": 0,\n" +
+                "\t\t\"receivableOverdue1\": 0,\n" +
+                "\t\t\"receivableTotal2\": 0,\n" +
+                "\t\t\"receivableOverdue2\": 0,\n" +
+                "\t\t\"payableTotal1\": 0,\n" +
+                "\t\t\"payableOverdue1\": 0,\n" +
+                "\t\t\"payableTotal2\": 0,\n" +
+                "\t\t\"payableOverdue2\": 0,\n" +
+                "\t\t\"insTime\": \"2018-04-04T13:57:52.331+05:00\",\n" +
+                "\t\t\"specifications\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"docDate\": \"2018-03-17\",\n" +
+                "\t\t\t\t\"amount\": \"20700.0\",\n" +
+                "\t\t\t\t\"agrmNo\": null,\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"cstDate\": null,\n" +
+                "\t\t\t\t\"docType\": 0,\n" +
+                "\t\t\t\t\"docNo\": \"1\",\n" +
+                "\t\t\t\t\"imExFlag\": 0,\n" +
+                "\t\t\t\t\"serialNo\": 1,\n" +
+                "\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.487+05:00\",\n" +
+                "\t\t\t\t\"oldNo\": \"2\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"confirmations\": [],\n" +
+                "\t\t\t\t\"goods\": [\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"tnCode\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"itemsName\": \"Мел микрокальцит 2 MK, ГОСТ 17498-75\",\n" +
+                "\t\t\t\t\t\t\"serialNo\": 1,\n" +
+                "\t\t\t\t\t\t\"unitCode\": \"166\",\n" +
+                "\t\t\t\t\t\t\"quantity\": \"300000\",\n" +
+                "\t\t\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\t\t\"cost\": \"0.027\",\n" +
+                "\t\t\t\t\t\t\"amount\": \"8100.0\",\n" +
+                "\t\t\t\t\t\t\"senderName\": null,\n" +
+                "\t\t\t\t\t\t\"senderCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"receiverName\": null,\n" +
+                "\t\t\t\t\t\t\"originCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"brandName\": null,\n" +
+                "\t\t\t\t\t\t\"warranty\": null,\n" +
+                "\t\t\t\t\t\t\"selfMadeFlag\": null,\n" +
+                "\t\t\t\t\t\t\"goodsType\": null,\n" +
+                "\t\t\t\t\t\t\"receiverCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.487+05:00\",\n" +
+                "\t\t\t\t\t\t\"status\": 1\n" +
+                "\t\t\t\t\t},\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"tnCode\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"itemsName\": \"Мел микрокальцит 20 MK, ГОСТ 17498-75\",\n" +
+                "\t\t\t\t\t\t\"serialNo\": 2,\n" +
+                "\t\t\t\t\t\t\"unitCode\": \"166\",\n" +
+                "\t\t\t\t\t\t\"quantity\": \"300000\",\n" +
+                "\t\t\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\t\t\"cost\": \"0.02\",\n" +
+                "\t\t\t\t\t\t\"amount\": \"6000.0\",\n" +
+                "\t\t\t\t\t\t\"senderName\": null,\n" +
+                "\t\t\t\t\t\t\"senderCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"receiverName\": null,\n" +
+                "\t\t\t\t\t\t\"originCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"brandName\": null,\n" +
+                "\t\t\t\t\t\t\"warranty\": null,\n" +
+                "\t\t\t\t\t\t\"selfMadeFlag\": null,\n" +
+                "\t\t\t\t\t\t\"goodsType\": null,\n" +
+                "\t\t\t\t\t\t\"receiverCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.503+05:00\",\n" +
+                "\t\t\t\t\t\t\"status\": 1\n" +
+                "\t\t\t\t\t},\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"tnCode\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"itemsName\": \"Мел микрокальцит 20 MK, ГОСТ 17498-75\",\n" +
+                "\t\t\t\t\t\t\"serialNo\": 3,\n" +
+                "\t\t\t\t\t\t\"unitCode\": \"166\",\n" +
+                "\t\t\t\t\t\t\"quantity\": \"300000\",\n" +
+                "\t\t\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\t\t\"cost\": \"0.022\",\n" +
+                "\t\t\t\t\t\t\"amount\": \"6600.0\",\n" +
+                "\t\t\t\t\t\t\"senderName\": null,\n" +
+                "\t\t\t\t\t\t\"senderCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"receiverName\": null,\n" +
+                "\t\t\t\t\t\t\"originCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"brandName\": null,\n" +
+                "\t\t\t\t\t\t\"warranty\": null,\n" +
+                "\t\t\t\t\t\t\"selfMadeFlag\": null,\n" +
+                "\t\t\t\t\t\t\"goodsType\": null,\n" +
+                "\t\t\t\t\t\t\"receiverCountryCode\": null,\n" +
+                "\t\t\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.503+05:00\",\n" +
+                "\t\t\t\t\t\t\"status\": 1\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t],\n" +
+                "\t\t\t\t\"fare\": null,\n" +
+                "\t\t\t\t\"services\": []\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"performedServices\": [],\n" +
+                "\t\t\"deliveryTerms\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"destination\": \"ст.Сары-Агач, гр.РУз.-КЗХ\",\n" +
+                "\t\t\t\t\"incotermsCode\": \"14\",\n" +
+                "\t\t\t\t\"agrmNo\": null,\n" +
+                "\t\t\t\t\"serialNo\": 1,\n" +
+                "\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.440+05:00\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"confirmations\": []\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"financeInfos\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"companyForName\": \"ООО \\\"ELBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"companyForCountryCode\": \"860\",\n" +
+                "\t\t\t\t\"companyForAddress\": null,\n" +
+                "\t\t\t\t\"bankForName\": \"Сам.обл.ф-л Народного Банка\",\n" +
+                "\t\t\t\t\"bankForCountryCode\": \"860\",\n" +
+                "\t\t\t\t\"bankForAddress\": null,\n" +
+                "\t\t\t\t\"bankForAttributes\": \"в/с 20208840700780187001, МФО: 01005, код SWIFT: SCPEUZ22, инн банка: 201214479\",\n" +
+                "\t\t\t\t\"agrmNo\": null,\n" +
+                "\t\t\t\t\"serialNo\": 1,\n" +
+                "\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.456+05:00\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"confirmations\": []\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"agreements\": [],\n" +
+                "\t\t\"endContract\": null,\n" +
+                "\t\t\"exportTerms\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"exportType\": 1,\n" +
+                "\t\t\t\t\"exportDeadline\": null,\n" +
+                "\t\t\t\t\"exportTerm\": 60,\n" +
+                "\t\t\t\t\"paymentTerm\": 0,\n" +
+                "\t\t\t\t\"paymentDeadline\": null,\n" +
+                "\t\t\t\t\"leasingDeadline\": 0,\n" +
+                "\t\t\t\t\"leasingRate\": \"0.0\",\n" +
+                "\t\t\t\t\"deadlineType\": 0,\n" +
+                "\t\t\t\t\"agrmNo\": null,\n" +
+                "\t\t\t\t\"insTime\": \"2018-04-04T13:57:52.362+05:00\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"confirmations\": []\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"internalShipments\": null,\n" +
+                "\t\t\"tollingTerms\": [],\n" +
+                "\t\t\"importTerms\": [],\n" +
+                "\t\t\"barterTerms\": [],\n" +
+                "\t\t\"transfers\": [],\n" +
+                "\t\t\"delegates\": [],\n" +
+                "\t\t\"declarations\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"g7a\": \"18007\",\n" +
+                "\t\t\t\t\"g7c\": \"0005489\",\n" +
+                "\t\t\t\t\"g7b\": \"2018-06-11\",\n" +
+                "\t\t\t\t\"g17\": \"398\",\n" +
+                "\t\t\t\t\"g24a\": \"21\",\n" +
+                "\t\t\t\t\"gdvipdate\": \"2018-06-11\",\n" +
+                "\t\t\t\t\"gc3date\": \"2024-12-20\",\n" +
+                "\t\t\t\t\"g2name\": \"OOO \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g23\": \"7944.07\",\n" +
+                "\t\t\t\t\"g8name\": \"ИП \\\"Абдунабиев Б. Ф.\\\"\",\n" +
+                "\t\t\t\t\"g9name\": \"OOO \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g1\": \"ЭК10\",\n" +
+                "\t\t\t\t\"g22a\": \"840\",\n" +
+                "\t\t\t\t\"g22b\": \"1358\",\n" +
+                "\t\t\t\t\"g15\": \"\",\n" +
+                "\t\t\t\t\"goods\": [\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"g32\": 1,\n" +
+                "\t\t\t\t\t\t\"g33\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"g42\": 1358,\n" +
+                "\t\t\t\t\t\t\"g37c\": \"000\",\n" +
+                "\t\t\t\t\t\t\"g31name\": \"1.Мел микрокальцит Марки 20 МК ГОСТ 17498-72 упакованы в 1700 п/п мешках, вес нетто-67915кг. 2. 1700 места (п/п мешки).\",\n" +
+                "\t\t\t\t\t\t\"g31amount\": 0.0,\n" +
+                "\t\t\t\t\t\t\"g41\": \"166\",\n" +
+                "\t\t\t\t\t\t\"g38\": 67915,\n" +
+                "\t\t\t\t\t\t\"g37b\": \"00\"\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t]\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"g7a\": \"18007\",\n" +
+                "\t\t\t\t\"g7c\": \"0006440\",\n" +
+                "\t\t\t\t\"g7b\": \"2018-07-09\",\n" +
+                "\t\t\t\t\"g17\": \"398\",\n" +
+                "\t\t\t\t\"g24a\": \"21\",\n" +
+                "\t\t\t\t\"gdvipdate\": \"2018-07-09\",\n" +
+                "\t\t\t\t\"gc3date\": \"2024-12-20\",\n" +
+                "\t\t\t\t\"g2name\": \"OOO \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g23\": \"7846.27\",\n" +
+                "\t\t\t\t\"g8name\": \"ИП \\\"Абдунабиев Б. Ф.\\\"\",\n" +
+                "\t\t\t\t\"g9name\": \"OOO \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g1\": \"ЭК10\",\n" +
+                "\t\t\t\t\"g22a\": \"840\",\n" +
+                "\t\t\t\t\"g22b\": \"1358\",\n" +
+                "\t\t\t\t\"g15\": \"\",\n" +
+                "\t\t\t\t\"goods\": [\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"g32\": 1,\n" +
+                "\t\t\t\t\t\t\"g33\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"g42\": 1358,\n" +
+                "\t\t\t\t\t\t\"g37c\": \"000\",\n" +
+                "\t\t\t\t\t\t\"g31name\": \"1.Мел микрокальцит Марки 20 МК ГОСТ 17498-72 упакованы в 1700 п/п мешках, вес нетто-67915кг. 2. 1700 места (п/п мешки).\",\n" +
+                "\t\t\t\t\t\t\"g31amount\": 0.0,\n" +
+                "\t\t\t\t\t\t\"g41\": \"166\",\n" +
+                "\t\t\t\t\t\t\"g38\": 67915,\n" +
+                "\t\t\t\t\t\t\"g37b\": \"00\"\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t]\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"g7a\": \"18007\",\n" +
+                "\t\t\t\t\"g7c\": \"0005541\",\n" +
+                "\t\t\t\t\"g7b\": \"2018-06-12\",\n" +
+                "\t\t\t\t\"g17\": \"398\",\n" +
+                "\t\t\t\t\"g24a\": \"21\",\n" +
+                "\t\t\t\t\"gdvipdate\": \"2018-06-12\",\n" +
+                "\t\t\t\t\"gc3date\": \"2024-12-20\",\n" +
+                "\t\t\t\t\"g2name\": \"ООО \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g23\": \"7909.37\",\n" +
+                "\t\t\t\t\"g8name\": \"ИП \\\"Абдунабиев Б.Ф\\\"\",\n" +
+                "\t\t\t\t\"g9name\": \"ООО \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g1\": \"ЭК10\",\n" +
+                "\t\t\t\t\"g22a\": \"840\",\n" +
+                "\t\t\t\t\"g22b\": \"1358\",\n" +
+                "\t\t\t\t\"g15\": \"\",\n" +
+                "\t\t\t\t\"goods\": [\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"g32\": 1,\n" +
+                "\t\t\t\t\t\t\"g33\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"g42\": 1358,\n" +
+                "\t\t\t\t\t\t\"g37c\": \"000\",\n" +
+                "\t\t\t\t\t\t\"g31name\": \"1. Мел микрокальцит Марки 20МК (МИКРОН) ГОСТ 17498-72 упакованы в п/п мешках, вес нетто-67915,0кг. 2-ВСЕГО: 1700 МЕСТ, В П/П МЕШКАХ ПО 40кг.\",\n" +
+                "\t\t\t\t\t\t\"g31amount\": 0.0,\n" +
+                "\t\t\t\t\t\t\"g41\": \"166\",\n" +
+                "\t\t\t\t\t\t\"g38\": 67915,\n" +
+                "\t\t\t\t\t\t\"g37b\": \"00\"\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t]\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"g7a\": \"18007\",\n" +
+                "\t\t\t\t\"g7c\": \"0003395\",\n" +
+                "\t\t\t\t\"g7b\": \"2018-04-09\",\n" +
+                "\t\t\t\t\"g17\": \"398\",\n" +
+                "\t\t\t\t\"g24a\": \"21\",\n" +
+                "\t\t\t\t\"gdvipdate\": \"2018-04-09\",\n" +
+                "\t\t\t\t\"gc3date\": \"2024-12-20\",\n" +
+                "\t\t\t\t\"g2name\": \"ООО \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g23\": \"8100.92\",\n" +
+                "\t\t\t\t\"g8name\": \"ИП \\\"АБДУНАБИЕВ Б.Ф\\\"\",\n" +
+                "\t\t\t\t\"g9name\": \"ООО \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g1\": \"ЭК10\",\n" +
+                "\t\t\t\t\"g22a\": \"840\",\n" +
+                "\t\t\t\t\"g22b\": \"1358\",\n" +
+                "\t\t\t\t\"g15\": \"\",\n" +
+                "\t\t\t\t\"goods\": [\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"g32\": 1,\n" +
+                "\t\t\t\t\t\t\"g33\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"g42\": 1358,\n" +
+                "\t\t\t\t\t\t\"g37c\": \"000\",\n" +
+                "\t\t\t\t\t\t\"g31name\": \"1. Мел микрокальцит Марки 20 М, МК ГОСТ 17498-72упакованы в п/п мешках по 40 кг Всего: 67915 кг2. 1700 мест (п/п мешки), вес 67915 кг\",\n" +
+                "\t\t\t\t\t\t\"g31amount\": 0.0,\n" +
+                "\t\t\t\t\t\t\"g41\": \"166\",\n" +
+                "\t\t\t\t\t\t\"g38\": 67915,\n" +
+                "\t\t\t\t\t\t\"g37b\": \"00\"\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t]\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"g7a\": \"18007\",\n" +
+                "\t\t\t\t\"g7c\": \"0005685\",\n" +
+                "\t\t\t\t\"g7b\": \"2018-06-18\",\n" +
+                "\t\t\t\t\"g17\": \"398\",\n" +
+                "\t\t\t\t\"g24a\": \"21\",\n" +
+                "\t\t\t\t\"gdvipdate\": \"2018-06-18\",\n" +
+                "\t\t\t\t\"gc3date\": \"2024-12-20\",\n" +
+                "\t\t\t\t\"g2name\": \"OOO \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g23\": \"7909.37\",\n" +
+                "\t\t\t\t\"g8name\": \"ИП \\\"Абдунабиев Б. Ф.\\\"\",\n" +
+                "\t\t\t\t\"g9name\": \"OOO \\\"ELIBOY INVES\\\"\",\n" +
+                "\t\t\t\t\"g1\": \"ЭК10\",\n" +
+                "\t\t\t\t\"g22a\": \"840\",\n" +
+                "\t\t\t\t\"g22b\": \"1358\",\n" +
+                "\t\t\t\t\"g15\": \"\",\n" +
+                "\t\t\t\t\"goods\": [\n" +
+                "\t\t\t\t\t{\n" +
+                "\t\t\t\t\t\t\"g32\": 1,\n" +
+                "\t\t\t\t\t\t\"g33\": \"2509000000\",\n" +
+                "\t\t\t\t\t\t\"g42\": 1358,\n" +
+                "\t\t\t\t\t\t\"g37c\": \"000\",\n" +
+                "\t\t\t\t\t\t\"g31name\": \"1.Мел микрокальцит Марки 20 МК ГОСТ 17498-72 упакованы в 1700 п/п мешках, вес нетто-67915кг. 2. 1700 места (п/п мешки).\",\n" +
+                "\t\t\t\t\t\t\"g31amount\": 0.0,\n" +
+                "\t\t\t\t\t\t\"g41\": \"166\",\n" +
+                "\t\t\t\t\t\t\"g38\": 67915,\n" +
+                "\t\t\t\t\t\t\"g37b\": \"00\"\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t]\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"guarantees\": [],\n" +
+                "\t\t\"lettersOfCredit\": [],\n" +
+                "\t\t\"policies\": [],\n" +
+                "\t\t\"receivableDrops\": [],\n" +
+                "\t\t\"payableDrops\": [],\n" +
+                "\t\t\"penalties\": [],\n" +
+                "\t\t\"commissions\": [],\n" +
+                "\t\t\"taxAgencyPenalties\": [],\n" +
+                "\t\t\"receivableInfos\": [],\n" +
+                "\t\t\"funds\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"serialNo\": 1,\n" +
+                "\t\t\t\t\"docNo\": \"2698913919\",\n" +
+                "\t\t\t\t\"docDate\": \"2018-03-31\",\n" +
+                "\t\t\t\t\"conditionType\": 1,\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"amount\": \"1360\",\n" +
+                "\t\t\t\t\"currRate\": \"0.0\",\n" +
+                "\t\t\t\t\"goodsAmount1\": \"1360\",\n" +
+                "\t\t\t\t\"goodsAmount2\": \"0\",\n" +
+                "\t\t\t\t\"serviceAmount1\": \"0\",\n" +
+                "\t\t\t\t\"serviceAmount2\": \"0\",\n" +
+                "\t\t\t\t\"userName\": \"GAFFAROVA AZIZA BAXRIDDINOVNA\",\n" +
+                "\t\t\t\t\"rateType\": null,\n" +
+                "\t\t\t\t\"insTime\": \"2018-04-04T17:08:15.563+05:00\",\n" +
+                "\t\t\t\t\"status\": 0\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"serialNo\": 2,\n" +
+                "\t\t\t\t\"docNo\": \"2819173824\",\n" +
+                "\t\t\t\t\"docDate\": \"2018-06-04\",\n" +
+                "\t\t\t\t\"conditionType\": 1,\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"amount\": \"4216\",\n" +
+                "\t\t\t\t\"currRate\": \"0.0\",\n" +
+                "\t\t\t\t\"goodsAmount1\": \"4216\",\n" +
+                "\t\t\t\t\"goodsAmount2\": \"0\",\n" +
+                "\t\t\t\t\"serviceAmount1\": \"0\",\n" +
+                "\t\t\t\t\"serviceAmount2\": \"0\",\n" +
+                "\t\t\t\t\"userName\": \"GAFFAROVA AZIZA BAXRIDDINOVNA\",\n" +
+                "\t\t\t\t\"rateType\": null,\n" +
+                "\t\t\t\t\"insTime\": \"2018-06-06T14:24:38.720+05:00\",\n" +
+                "\t\t\t\t\"status\": 0\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"serialNo\": 3,\n" +
+                "\t\t\t\t\"docNo\": \"2884862467\",\n" +
+                "\t\t\t\t\"docDate\": \"2018-07-13\",\n" +
+                "\t\t\t\t\"conditionType\": 1,\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"amount\": \"1360\",\n" +
+                "\t\t\t\t\"currRate\": \"0.0\",\n" +
+                "\t\t\t\t\"goodsAmount1\": \"1360\",\n" +
+                "\t\t\t\t\"goodsAmount2\": \"0\",\n" +
+                "\t\t\t\t\"serviceAmount1\": \"0\",\n" +
+                "\t\t\t\t\"serviceAmount2\": \"0\",\n" +
+                "\t\t\t\t\"userName\": \"GAFFAROVA AZIZA BAXRIDDINOVNA\",\n" +
+                "\t\t\t\t\"rateType\": null,\n" +
+                "\t\t\t\t\"insTime\": \"2018-07-24T17:09:27.427+05:00\",\n" +
+                "\t\t\t\t\"status\": 0\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"refundsExp\": [],\n" +
+                "\t\t\"movesToEx\": [],\n" +
+                "\t\t\"movesFromEx\": [],\n" +
+                "\t\t\"paymentRefs\": [\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"docNo\": \"01005/04.04.18/00004\",\n" +
+                "\t\t\t\t\"docDate\": \"2018-04-04\",\n" +
+                "\t\t\t\t\"reasonType\": 1,\n" +
+                "\t\t\t\t\"fundSerialNo\": 1,\n" +
+                "\t\t\t\t\"letterOfCreditNo\": null,\n" +
+                "\t\t\t\t\"guaranteeNo\": null,\n" +
+                "\t\t\t\t\"policyNo\": null,\n" +
+                "\t\t\t\t\"amount\": \"1360\",\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"unusedAmount\": \"0\",\n" +
+                "\t\t\t\t\"docValDate\": null,\n" +
+                "\t\t\t\t\"userName\": \"GAFFAROVA AZIZA BAXRIDDINOVNA\",\n" +
+                "\t\t\t\t\"moveFromExSerialNo\": 0,\n" +
+                "\t\t\t\t\"insTime\": \"2018-04-04T17:56:05.072+05:00\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"paymentRefSumChanges\": []\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"docNo\": \"01005/06.06.18/00008\",\n" +
+                "\t\t\t\t\"docDate\": \"2018-06-06\",\n" +
+                "\t\t\t\t\"reasonType\": 1,\n" +
+                "\t\t\t\t\"fundSerialNo\": 2,\n" +
+                "\t\t\t\t\"letterOfCreditNo\": null,\n" +
+                "\t\t\t\t\"guaranteeNo\": null,\n" +
+                "\t\t\t\t\"policyNo\": null,\n" +
+                "\t\t\t\t\"amount\": \"4216\",\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"unusedAmount\": \"0\",\n" +
+                "\t\t\t\t\"docValDate\": null,\n" +
+                "\t\t\t\t\"userName\": \"GAFFAROVA AZIZA BAXRIDDINOVNA\",\n" +
+                "\t\t\t\t\"moveFromExSerialNo\": 0,\n" +
+                "\t\t\t\t\"insTime\": \"2018-06-06T14:56:24.491+05:00\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"paymentRefSumChanges\": []\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
+                "\t\t\t\t\"docNo\": \"01005/24.07.18/00011\",\n" +
+                "\t\t\t\t\"docDate\": \"2018-07-24\",\n" +
+                "\t\t\t\t\"reasonType\": 1,\n" +
+                "\t\t\t\t\"fundSerialNo\": 3,\n" +
+                "\t\t\t\t\"letterOfCreditNo\": null,\n" +
+                "\t\t\t\t\"guaranteeNo\": null,\n" +
+                "\t\t\t\t\"policyNo\": null,\n" +
+                "\t\t\t\t\"amount\": \"1360\",\n" +
+                "\t\t\t\t\"currCode\": \"840\",\n" +
+                "\t\t\t\t\"unusedAmount\": \"0\",\n" +
+                "\t\t\t\t\"docValDate\": null,\n" +
+                "\t\t\t\t\"userName\": \"GAFFAROVA AZIZA BAXRIDDINOVNA\",\n" +
+                "\t\t\t\t\"moveFromExSerialNo\": 0,\n" +
+                "\t\t\t\t\"insTime\": \"2018-07-24T17:17:17.358+05:00\",\n" +
+                "\t\t\t\t\"status\": 0,\n" +
+                "\t\t\t\t\"paymentRefSumChanges\": []\n" +
+                "\t\t\t}\n" +
+                "\t\t],\n" +
+                "\t\t\"taxes\": [],\n" +
+                "\t\t\"compensations\": [],\n" +
+                "\t\t\"sales\": [],\n" +
+                "\t\t\"leasePayments\": [],\n" +
+                "\t\t\"payments\": [],\n" +
+                "\t\t\"refundsImp\": [],\n" +
+                "\t\t\"movesToIm\": [],\n" +
+                "\t\t\"movesFromIm\": [],\n" +
+                "\t\t\"exchangePayments\": []\n" +
+                "\t}\n" +
+                "}";
+
+    }
+
+
+
     public static String getOrgInfoSystemResponse() {
         return "{\n" +
                 "    \"INFO DATE\": \"2024-04-08 17:23:26\",\n" +

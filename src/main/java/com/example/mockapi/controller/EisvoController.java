@@ -29,7 +29,8 @@ public class EisvoController {
 //        System.out.println(bearerToken);
         System.out.println(requestObj.toString());
 
-        String eisvoResponse = getEisvoResponse();
+//        String eisvoResponse = getEisvoResponse();
+        String eisvoResponse = getMockContractGetResponseV4();
 
         Object eisvoResponseObj = objectMapper.readValue(eisvoResponse, Object.class);
 
